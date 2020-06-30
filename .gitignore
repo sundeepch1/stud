@@ -5,5 +5,4 @@ target/
 !**/src/main/**
 !**/src/test/**
 
-!**/.metadata
-!**/.recommenders
+
