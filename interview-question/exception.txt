@@ -1,0 +1,14 @@
+other Checked Exceptions –
+
+SQLException
+IOException
+ClassNotFoundException
+InvocationTargetException
+
+unchecked exception classes:
+
+NullPointerException
+ArrayIndexOutOfBoundsException
+ArithmeticException
+IllegalArgumentException
+NumberFormatException

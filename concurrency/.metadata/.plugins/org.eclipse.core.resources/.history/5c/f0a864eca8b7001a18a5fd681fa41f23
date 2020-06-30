@@ -1,0 +1,13 @@
+package concurrency.semaphore;
+
+import java.util.concurrent.Semaphore;
+
+public class SemaphoreTest {
+
+	public static void main(String[] args) {
+		Semaphore semaphore = new Semaphore(0);
+		semaphore.release();
+		System.out.println(semaphore.availablePermits());
+	}
+
+}

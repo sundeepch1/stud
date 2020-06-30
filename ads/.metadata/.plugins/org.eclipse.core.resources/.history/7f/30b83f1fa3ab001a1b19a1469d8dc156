@@ -1,0 +1,18 @@
+package stack;
+
+class Stack{
+	
+	private int a[];
+	private int top;
+	public Stack(int size) {
+		this.a = new int[size];
+		this.top = -1;
+	}
+	
+	
+	
+}
+
+public class StackOperation {
+	
+}

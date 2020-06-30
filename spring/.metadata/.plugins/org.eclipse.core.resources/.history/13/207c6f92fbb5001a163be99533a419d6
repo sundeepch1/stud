@@ -1,0 +1,5 @@
+package injection.collection;
+
+public class TestClient {
+
+}

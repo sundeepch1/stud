@@ -1,0 +1,10 @@
+package concurrency.semaphore;
+
+public class Semaphore {
+
+	public static void main(String[] args) {
+		java.util.concurrent.Semaphore
+
+	}
+
+}

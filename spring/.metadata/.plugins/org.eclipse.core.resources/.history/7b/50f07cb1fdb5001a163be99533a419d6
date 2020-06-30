@@ -1,0 +1,8 @@
+package injection.collection;
+
+public class Student {
+	private Integer id;
+	private String name;
+	private String email;
+	private String gender;
+}

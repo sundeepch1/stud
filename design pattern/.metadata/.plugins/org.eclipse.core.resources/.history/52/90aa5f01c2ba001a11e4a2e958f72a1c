@@ -1,0 +1,5 @@
+package decorator.design.pattern;
+
+public class Dress {
+
+}

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- <context:component-scan base-package="com.infotech.model"></context:component-scan> -->
+	<!-- bean definitions here -->
+	<bean id="student1" class="injection.collection.Student">
+		<property name="id" value="1"></property>
+		<property name="name" value="sundeep"></property>
+		<property name="email" value="email@com"></property>
+		<property name="gender" value="male"></property>
+	</bean>
+		<bean id="student2" class="injection.collection.Student">
+		<property name="id" value="1"></property>
+		<property name="name" value="sundeep"></property>
+		<property name="email" value="email@com"></property>
+		<property name="gender" value="male"></property>
+	</bean>
+	<bean id="comapny" class="injection.collection.CompanyInfo">
+		<property name="empIdAndNameMap">
+			<map>
+				<entry key="1001" value="sundeep"></entry>
+				<entry key="1002" value="munna"></entry>
+			</map>
+		</property>
+		<property name="studentIdMap">
+			<map>
+				<entry key="1001" value-ref="student1"></entry>
+				<entry key="1002" value-ref="student2"></entry>
+			</map>
+		</property>
+	</bean>
+</beans>

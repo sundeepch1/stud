@@ -1,0 +1,30 @@
+https://metadesignsolutions.com/openings
+
+create table jobs(
+	Id int primary key auto_increment,
+	CompanyName varchar(1000),
+	AppliedEmail varchar(100),
+	AppliedDate varchar(50),
+	calledByHR varchar(10) default 'No'
+);
+
+1. MerakiPoint Java Developer
+2. Logicsoft International Java Developer
+3. Solitera Software Java Developer
+
+22/jun/2020
+1. Acmeture Global Consulting Services => trupti.jagtap@acmeture.com
+	insert into jobs(CompanyName,AppliedEmail, AppliedDate) values('Actolap Solutions India Private Limited.','hr@merakipoint.com','22-june-2020');
+2. Edunext Technologies Pvt. Ltd
+
+3. Avantha Technologies Limited
+4. ITSWS Technologies.
+5. Lumiq
+6. Team Computers
+7.HR Devi and Associates
+8.careers@oodlestechnologies.com
+
+
+
+
+

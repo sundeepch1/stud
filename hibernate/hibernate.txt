@@ -1,0 +1,15 @@
+https://www.java4s.com/hibernate/life-cycle-of-pojo-class-objects-in-the-hibernate/
+https://www.dineshonjava.com/difference-between-merge-and-update-methods-in-hibernate/
+https://docs.jboss.org/hibernate/orm/5.1/javadocs/org/hibernate/Query.html#setParameterList-java.lang.String-java.lang.Object:A-
+
+Hibernate Lifecycle Of pojo Class Objects
+Transient state
+Persistent state
+Detached state
+
+Hibernate SessionFactory provides three methods through which we can get Session object – 
+getCurrentSession(), 
+openSession() and 
+openStatelessSession().
+
+NonUniqueObjectException

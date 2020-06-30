@@ -1,0 +1,10 @@
+package factory.method;
+
+public class Printer {
+
+	public void printBalanceInformation(String accountNumber) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

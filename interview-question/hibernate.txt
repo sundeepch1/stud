@@ -1,0 +1,62 @@
+1. SessionFactory vs Session
+SessionFactory is an instance which will create Session objects.
+SessionFactory keeps all DB  related information pulled from either hibernate.cfg.xml file or hibernate.properties file.
+SessionFactory is long-lived object which is available for the whole application.
+SessionFactory provides a second level cache.
+The SessionFactory is a heavyweight and immutable object because it maintains data sources, mappings, hibernate configuration information etc.
+It is thread safe.
+vs=>
+Session is an instance which will use for transation operations.
+Session keeps all information about physical connection with a database.
+Session is short-lived object which is only available for particular transaction.
+Session provides a first level cache.
+The SessionFactory is a lightweight and mutable object.
+It is not thread safe.
+
+2. Get() vs Load() methods
+get() loads the data as soon as it’s called so it is called eagar loading. It is slow. 
+If the object is not then it returns null.
+If you are not sure that object exist then use get() method.
+vs=>
+load() returns a proxy object and loads data only when it’s actually required so it is called lazy loading. It is fast.
+If the object is not then it throws exception(org.hibernate.ObjectNotFoundException).
+If you are sure that object exist then use load() method.
+
+3. Merge() vs Update()
+if you want to save your modifications at any time without knowing about the state of an session, then use merge() in hibernate.
+It does not throw any exception.
+vs=>
+if you are sure that the session does not contains an already persistent instance with the same identifier,then use update to save the data in hibernate.
+it throws exception(NonUniqueObjectException).
+
+4. Object States in Hibernate
+Transient Object State: An object which is not associated with hibernate session and does not represent a row in the database is considered as transient. It will be garbage collected if no other object refers to it.
+Persistent Object State: An object that is associated with the hibernate session is called as Persistent object. When the object is in persistent state, then it represent one row of the database and consists of an identifier value.You can make a transient instance persistent by associating it with a Session.
+Detached Object State: Object which is just removed from hibernate session is called as detached object.The sate of the detached object is called as detached state. When the object is in detached sate then it contain identity but you can’t do persistence operation with that identity. Any changes made to the detached objects are not saved to the database. The detached object can be reattached to the new session and save to the database using update, saveOrUpdate and merge methods.
+
+5. save() vs persist()
+It return generated id and return type is serializable.
+It can save object within boundaries and outside boundaries.
+It will create a new row in the table for detached object . 
+It is only supported by Hibernate.
+vs
+It does not return anything. Its void return type.
+It can only save object within the transaction boundaries  
+It will throw persistence exception for detached object 
+It is also supported by JPA.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

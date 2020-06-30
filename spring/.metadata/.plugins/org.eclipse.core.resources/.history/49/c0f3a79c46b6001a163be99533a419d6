@@ -1,0 +1,8 @@
+package com.infotech.event.handler;
+
+import org.springframework.context.ApplicationContextInitializer;
+import org.springframework.context.ApplicationListener;
+
+public class ContextStartedEventHandler implements ApplicationListener<E>, ApplicationContextInitializer<C> {
+
+}

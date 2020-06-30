@@ -1,0 +1,84 @@
+https://www.studytonight.com/data-structures/introduction-to-data-structures
+https://www.khanacademy.org/computing/computer-science/algorithms
+Abstract Data Structure
+
+Linked List
+Tree
+Graph
+Stack, Queue etc.
+
+Few examples of comparison based sorting algorithms are quick sort, merge sort, bubble sort, selection sort, heap sort, insertion sort, whereas algorithms like radix sort, bucket sort and comparison sort fall into the category of non-comparison based sorting algorithms.
+
+Some Sorting Algorithms are stable by nature, such as Bubble Sort, Insertion Sort, Merge Sort, Count Sort etc.
+
+Complexity Analysis of Bubble Sort
+Bubble Sort is stable
+Worst Case Time Complexity [ Big-O ]: O(n2)
+Best Case Time Complexity [Big-omega]: O(n)
+Average Time Complexity [Big-theta]: O(n2)
+Space Complexity: O(1)
+
+Complexity Analysis of Insertion Sort
+Insertion Sort is stable
+Worst Case Time Complexity [ Big-O ]: O(n2)
+Best Case Time Complexity [Big-omega]: O(n)
+Average Time Complexity [Big-theta]: O(n2)
+Space Complexity: O(1)
+
+Complexity Analysis of Selection Sort
+Worst Case Time Complexity [ Big-O ]: O(n2)
+Best Case Time Complexity [Big-omega]: O(n2)
+Average Time Complexity [Big-theta]: O(n2)
+Space Complexity: O(1)
+
+Merge Sort
+Merge Sort is stable
+follows the rule of Divide and Conquer to sort a given set of numbers/elements, recursively
+Worst Case Time Complexity [ Big-O ]: O(n*log n)
+Best Case Time Complexity [Big-omega]: O(n*log n)
+Average Time Complexity [Big-theta]: O(n*log n)
+Space Complexity: O(n)
+
+Quick Sort Algorithm(partition-exchange sort)
+Quick Sort is not stable
+Worst Case Time Complexity [ Big-O ]: O(n2)
+Best Case Time Complexity [Big-omega]: O(n*log n)
+Average Time Complexity [Big-theta]: O(n*log n)
+Space Complexity: O(n*log n)
+
+Heap Sort
+Heap sort is not a Stable sort
+Worst Case Time Complexity: O(n*log n)
+Best Case Time Complexity: O(n*log n)
+Average Time Complexity: O(n*log n)
+Space Complexity : O(1)
+Heap sort is not a Stable sort, and requires a constant space for sorting a list.
+Heap Sort is very fast and is widely used for sorting.
+
+Counting Sort
+Advantages of Counting Sort:
+It is quite fast
+It is a stable algorithm
+Note: For a sorting algorithm to be stable, the order of elements with equal keys (values) in the sorted array should be the same as that of the input array.
+Disadvantages of Counting Sort:
+It is not suitable for sorting large data sets
+It is not suitable for sorting string values
+
+Stack Operations
+Below mentioned are the time complexities for various operations that can be performed on the Stack data structure.
+Push Operation : O(1)
+Pop Operation : O(1)
+Top Operation : O(1)
+Search Operation : O(n)
+
+Queue Operations
+Just like Stack, in case of a Queue too, we know exactly, on which position new element will be added and from where an element will be removed, hence both these operations requires a single step.
+Enqueue: O(1)
+Dequeue: O(1)
+Size: O(1)
+
+
+
+
+
+

@@ -1,0 +1,19 @@
+package bean.inheritance;
+
+import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class ClientTest {
+	public static void main(String... strings) {
+		
+		AbstractApplicationContext context = new ClassPathXmlApplicationContext("Message.xml");
+		Employee employee = context.getBean("employee", Employee.class);
+		
+		System.out.println(employee.getId());
+		System.out.println(employee.getName());
+		System.out.println(employee.getGender());
+		System.out.println(employee.getPanNo());
+		
+		context.close();
+	}
+}

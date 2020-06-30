@@ -1,0 +1,50 @@
+package sorting;
+
+public class QuickSort {
+	public static void main(String[] args) {
+
+		int arr[] = { 32, 45, 67, 2, 7 };
+		quickSort(arr, 0, arr.length - 1);
+
+		for (int i = 0; i < arr.length; i++) {
+			System.out.print(arr[i] + "\t");
+		}
+	}
+
+//	private static void quickSort(int[] arr, int i, int j) {
+//		// TODO Auto-generated method stub
+//
+//	}
+
+	private static void quickSort(int array[] ,int left, int right) {
+
+		int i = left;
+		int j = right;
+		// find pivot number, we will take it as mid
+		int pivot = array[left + (right - left) / 2];
+
+		while (i <= j) {
+			/**
+			 * In each iteration, we will increment left until we find element greater than
+			 * pivot We will decrement right until we find element less than pivot
+			 */
+			while (array[i] < pivot) {
+				i++;
+			}
+			while (array[j] > pivot) {
+				j--;
+			}
+			if (i <= j) {
+				exchange(i, j);
+				// move index to next position on both sides
+				i++;
+				j--;
+			}
+		}
+		// call quickSort() method recursively
+		if (left < j)
+			quickSort(left, j);
+		if (i < right)
+			quickSort(i, right);
+	}
+}

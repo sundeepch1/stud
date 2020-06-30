@@ -1,0 +1,29 @@
+package synchonization.problem;
+
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+class MyClass implements Runnable{
+	private int number = 0;
+
+	@Override
+	public void run() {
+		synchronized (this) {
+			for (int i = 0; i < 5; i++) {
+				System.out.println("My number = " + number++);
+			}
+		}		
+	}
+}
+
+public class SynchronizationProblem {
+
+	public static void main(String... strings) {
+		MyClass task = new MyClass();
+		Thread t1 = new Thread(task, "T1");
+		Thread t2 = new Thread(task, "T2");
+		
+		t1.start();
+		t2.start();
+	}
+}

@@ -1,0 +1,7 @@
+package com.infotech.event.handler;
+
+import org.springframework.context.ApplicationListener;
+
+public class ContextStartedEventHandler extends ApplicationListener {
+
+}

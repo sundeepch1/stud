@@ -1,0 +1,5 @@
+package observer.design.pattern;
+
+public class Subject {
+
+}

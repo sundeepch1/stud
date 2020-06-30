@@ -1,0 +1,16 @@
+package injection.collection;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.infotech.model.Message;
+
+public class TestClient {
+	ApplicationContext applicationContext = new ClassPathXmlApplicationContext("collection.xml");
+	OrgInfo info = applicationContext.getBean("orgInfo", OrgInfo.class);
+	
+	
+	
+	
+	((AbstractApplicationContext) applicationContext).close();
+}

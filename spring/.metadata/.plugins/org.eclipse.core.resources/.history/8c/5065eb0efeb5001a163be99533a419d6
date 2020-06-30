@@ -1,0 +1,11 @@
+package injection.collection;
+
+public class OrgInfo {
+//	private String nameArr[] = new String[2];
+//	private List<String> empNameList;
+//	private Set<Integer> empIdsSet;
+	
+	private Student[] stuArr= new Student[2];
+	
+	
+}

@@ -1,0 +1,24 @@
+package com.hashmap;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class HashMapClear {
+
+	public static void main(String[] args) {
+		Map<String,String> map = new HashMap<>();
+		
+		String s1 = "FB";
+		String s2="Ea";
+		
+		map.put("aaa","aaa");
+		map.put("bbb","bbb");
+		map.put("aaa","bbb");
+		map.put("ccc","ccc");
+		map.put("ddd","ddd");
+		map.put("aaa","ddd");
+				
+
+	}
+
+}

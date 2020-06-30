@@ -1,0 +1,60 @@
+package queue;
+
+public class QueueOperation {
+
+	class Queue {
+		private int head, tail;
+		private int a[];
+		private int size;
+
+		public Queue(int size) {
+			this.size = size;
+			this.a = new int[size];
+			this.head = -1;
+			this.tail = -1;
+		}
+
+		public void enqueue(int x) {
+			if (head == -1) {
+				head++;
+			}
+
+			if (tail == (size - 1)) {
+				System.out.println("!!! Queue overflow !!!");
+			} else {
+				a[++tail] = x;
+			}
+		}
+
+		public int dequeue() {
+			int data = 0;
+			if ((head == -1) && (tail == -1)) {
+				System.out.println("!!! Queue is empty !!!");
+			} else {
+				data = a[0]; // returning first element
+				for (int i = 0; i < tail - 1; i++) // shifting all other elements
+				{
+					a[i] = a[i + 1];
+					tail--;
+				}
+			}
+			return data;
+		}
+
+	}
+
+	public static void main(String[] args) {
+		Queue  name = new Queue(5);
+	    name.enqueue(10);
+	    name.enqueue(100);
+	    name.enqueue(1000);
+	    name.enqueue(1001);
+	    name.enqueue(1002);
+	    name.dequeue();
+	    name.enqueue(1003);
+	    name.dequeue();
+	    name.dequeue();
+	    name.enqueue(1004);
+	}
+
+}

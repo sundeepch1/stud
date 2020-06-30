@@ -1,0 +1,453 @@
+SELECT firstname, 
+   lastname, 
+   list.address 
+FROM list
+   INNER JOIN (SELECT address
+               FROM   list
+               GROUP  BY address
+               HAVING COUNT(id) > 1) dup
+           ON list.address = dup.address;
+
+create table employees(
+	eid int(11) auto_increment,
+	ename varchar(50),
+	deptid int(11),
+	salary int(11),
+	commission int(11),
+	designation varchar(100),
+	mgrid int(11),
+	gender varchar(1),
+	primary key(eid)
+);
+
+insert into employees (ename, deptid, salary, commission, designation, mgrid, gender) values('nikhil', 10, 120000, 30000, 'Manager', null, 'm');
+insert into employees (ename, deptid, salary, commission, designation, mgrid, gender) values('nitin', 10, 80000, 15000, 'Manager', null, 'm');
+insert into employees (ename, deptid, salary, commission, designation, mgrid, gender) values('neha', 20, 50000, null, 'Programmer', 1, 'f');
+insert into employees (ename, deptid, salary, commission, designation, mgrid, gender) values('vaibhav', 20, 15000, 3000, 'FrontDeskOperator', 1, 'm');
+insert into employees (ename, deptid, salary, commission, designation, mgrid, gender) values('salman', 30, 5000, 1000, 'Assitant', 1, 'm');
+insert into employees (ename, deptid, salary, commission, designation, mgrid, gender) values('jayant', 20, 25000, 9000, 'Programmer', 1, 'm');
+insert into employees (ename, deptid, salary, commission, designation, mgrid, gender) values('sharukh', 30, 4000, 500, 'Assitant', 2, 'm');
+insert into employees (ename, deptid, salary, commission, designation, mgrid, gender) values('kiran', 20, 10000, 1500, 'Analyst', 3, 'm');
+insert into employees (ename, deptid, salary, commission, designation, mgrid, gender) values('sonali', 20, 40000, 35000, 'Developer', 2, 'f');
+insert into employees (ename, deptid, salary, commission, designation, mgrid, gender) values('surbhi', 20, 35000, 3000, 'Developr', 2, 'f');
+insert into employees (ename, deptid, salary, commission, designation, mgrid, gender) values('sundeep', null, 35000, 3000, 'Developr', 3, 'm');
+insert into employees (ename, deptid, salary, commission, designation, mgrid, gender) values('surbhi', null, 35000, 3000, 'Developr', 3, 'm');
+
+create table departments(
+	deptid int(11) auto_increment,
+	dname varchar(20),
+	city varchar(100),
+	primary key(deptid)
+);
+
+insert into departments(deptid ,dname, city) values(10, 'Sales', 'mumbai');
+insert into departments(deptid, dname, city) values(20, 'Marketing', 'banglore');
+insert into departments(deptid, dname, city) values(30, 'Finance', 'chennai');
+
+create table students(
+	sno int(11),
+	sname varchar(20),
+	age int(100),
+	marks int(11),
+	dob date,
+	subject varchar(100)
+);
+
+alter table students rename to estudents;
+alter table student drop dop;
+alter table students modify subject varchar(50);
+alter table students modify subject varchar(100) not null default 'history';
+alter table students alter subject set default 'sanskrit';
+alter table student add dob date after age;
+
+clause in sql
+in => exact matching,
+between => range matching,
+like => pattern matching
+
+select * from employees where designation in ('Manager', 'Developer');
+select * from employees where salary >=30000 and salary <= 90000;
+select * from employees where salary between 30000 and 90000;
+select * from employees where commission between 5000 and 16000 and deptid in (10);
+select * from employees where designation in('Manager', 'Developer') and (ename like 'n%' or ename like 's%');
+select ename, salary, commission , salary + commission as effsal from employees;
+select count(*) from employees where deptid in (30) and commission is null;
+select * from employees order by salary;
+select * from employees order by commission, salary desc;
+select * from employees where deptid = 20 order by salary desc;
+select * from employees where deptid = 20  order by salary desc limit 1;
+select * from employees where deptid = 20  order by salary desc limit 1,5;(1 to 5 but start from 0 index)
+
+select emoployee who gets highest salary;
+select * from employees order by salary desc limit 1;
+select * from employees order by salary limit 3;
+select * from employees where deptid=20 order by salary desc limit 1;
+
+second highest salary
+select * from employees where deptid = 20 order by salary limit 1,1;
+
+case statement
+set @number = 10;
+select case(@number%2)
+	when 0 then 'even'
+	when 1 then 'odd'
+	end as evenodd;
+
+increment salary of employee,
+manager salary is incremented by 2000
+developer salary is incremented by 1000
+else salary will remain the same. 
+
+select ename, salary, designation, case(designation)
+	when 'Manager' then salary + 2000
+	when 'Developer' then salary + 1000
+	else salary
+	end as netsalary from employees;
+
+prefix every employee with mr. and miss depends on gender
+
+select case(gender)
+	when 'm' then concat('Mr. ', ename)
+	when 'f' then concat('Mrs. ', + ename)
+	end as ename, salary from employees;   
+
+functions
+
+select ename, length(ename) from employees;
+select ename, upper(ename) from employees;
+select ename, lower(ename) from employees;
+select ename, substring(ename, 1,6) from employees;
+select ename, instr(ename, 'a') from employees;
+
+create table test2(
+	first varchar(50),
+	last varchar(50)
+);
+
+insert into test2 values ('Sundeep', 'Chaurasiya');
+insert into test2 values ('Hariom', 'Kumar');
+insert into test2 values ('Parth', 'Kumar');
+insert into test2 values ('Shivam', 'Singal')
+
+query to print first and last name with space between them.
+select first, last , concat(first, ' ', last) from test2;
+select first, last , concat(first,concat(' ', last)) as 'full name' from test2;
+
+select name in initcap like nikhil -> Nikhil
+select concat(upper(substring(ename,1,1)), substring(ename,2)) as ename from employees;
+select concat(upper(substring(ename,1,1)), substring(ename,2, length(ename))) as ename from employees;
+
+create table test1(
+	name varchar(50)
+);
+
+insert into test1 values ('Sundeep Chaurasiya');
+insert into test1 values ('Hariom Kumar');
+insert into test1 values ('Parth Kumar');
+insert into test1 values ('Shivam Singal');
+
+Sudeep kakawal -> S.Kakawal
+ 
+select concat(concat(upper(substring(name,1,1)),'.'),substring(name, instr(name,' ') + 1, length(name))) as name from test1;
+
+midalpha name(nikhil)
+select case(length(ename) % 2)
+	when 0 then substring(ename, length(ename)/2, 2)
+	when 1 then substring(ename, length(ename)/2, 1)
+	end as name from employees;
+
+select ltrim('       nnnnn');
+select rtrim(nnnnn          ');
+select repeat('##', 5);
+
+('       sundeep') => ('********sundeep');
+select concat(repeat('*', length(name)-length(ltrim(name))),ltrim(name)) as name from test1;
+
+select replace('amit','a', 's');
+select replace(name,' ','*') as name from test1;
+select concat(repeat('*', length(name)-4), substring(name, length(name)-4, length(name))) from test1;
+
+select ename, salary, hiredate, timestampdiff(year,hiredate, curdate()) as 'worked year', if(timestampdiff(year,hiredate, curdate())>1, salary + salary*0.1, salary) as 'new salary' from employees;
+
+
+select ename, salary, hiredate, case 
+	when quarter(hiredate)=1 then '1'
+	when quarter(hiredate)=2 then '2'
+	when quarter(hiredate)=3 then '3'
+	when quarter(hiredate)=4 then '4'
+	end as quarter	 
+	from employees;
+
+select ename, salary, hiredate, case(quarter(hiredate))
+	when 1 then '1'
+	when 2 then '2'
+	when 3 then '3'
+	when 4 then '4'
+	end as quarter	 
+	from employees;
+
+select ename, salary, hiredate, case(dayname(hiredate))
+	when 'Sunday'then 'Weekend'
+	when 'Saturday' then 'Weekend'
+	else 'Weekday'
+	end as quarter	 
+	from employees;
+select ename, salary, hiredate, dayname(hiredate) 
+	from employees;
+
+write query, to find employee hiring month in which nitin hired
+select extract(month from hiredate) from employees;
+select ename, hiredate from employees where extract(month from hiredate) = (select extract(month from hiredate) from employees where ename='nitin');
+
+select ename, salary, commission, salary + ifnull(commission,0) as total from employees;
+select ename, salary, commission, if(commission is null, salary, salary+commission) as total from employees;
+IFNULL(first, second) => if not null return first, null return second
+
+Group Functions sum(), min(), max(), avg(), count() never work on null values,=> execute after where
+select max(salary) from employees;
+select count(*) from employees where salary between 40000 and 90000;
+select count(*) from employees where commission is null;
+select max(salary) from employees where designation='Manager';
+select count(*) from employees where extract(year from hiredate)=2015;
+select sum(commission) from employees where timestampdiff(year, hiredate, curdate());
+select count(distinct deptid, designation) from employees;
+select sum(case(gender) when 'm' then 1 else 0 end) as males,
+	sum(case(gender) when 'f' then 1 else 0 end) as females       
+	from employees;
+
+select sum(case(extract(year from hiredate)) when 2015 then 1 else 0 end) as '2015',
+	sum(case(extract(year from hiredate)) when 2016 then 1 else 0 end) as '2016',
+	sum(case(extract(year from hiredate)) when 2017 then 1 else 0 end) as '2017',
+	sum(case(extract(year from hiredate)) when 2018 then 1 else 0 end) as '2018'
+	from employees;
+find the number of employees per department
+select count(*), deptid from employees group by deptid;
+
+find the min, max, avg of employees per department
+select min(salary) as min, max(salary) as max, avg(salary) as avg, deptid from employees group by deptid; 
+select avg(salary) as avg, designation from employees group by designation;
+select extract(year from hiredate) as date, count(*) from employees group by extract(year from hiredate);
+select extract(year from hiredate) as date, count(*) from employees group by date;
+select deptid, count(*) from employees where deptid in(10,30) group by deptid;
+
+where
+  ||
+group by
+  ||
+group function
+  ||
+having
+  ||
+order by
+
+query to find average salary of manager, programmer, developer.
+select avg(salary) as avg, designation from employees where designation in('Manager', 'Programmer','Developer') group by designation;
+
+query to find number of employee in department is greater than 2;
+select deptid, count(*) from employees group by deptid having count(*)>2;
+select designation, count(*) from employees group by designation having count(*)=1;
+select designation, count(*) as decount from employees group by designation having decount=1;
+select avg(salary) as avg, designation from employees where designation in('Manager', 'Programmer','Developer') group by designation having avg<90000;
+select avg(salary) as avg, designation from employees where designation in('Manager', 'Programmer','Developer') group by designation having avg<90000 order by designation desc;
+
+query to find number of employees hired in 2015, 2016, 2015 and the number of employees hired in ayear are greater then 2;
+select extract(year from hiredate) as hireyear, count(*) as empcount from employees where extract(year from hiredate) in('2015', '2016', '2017') group by extract(year from hiredate) having empcount > 2;
+
+select extract(year from hiredate) as hireyear, count(*) as empcount from employees where extract(year from hiredate) in('2015', '2016', '2017') group by hireyear having empcount > 2; 
+
+
+constraints
+alter table test2 add constraint test2_primary primary key(first);
+alter table test2 add constraint primary key(first);
+alter table test2 add constraint primary key(first, second);
+alter table test2 drop primary key;
+
+desc information_schema.key_column_usage;
+
+alter table test2 change last(old) last(new) varchar(50) not null;
+
+
+create table emp12(
+	eid int(11),
+	deptid int(11),
+	foreign key(deptid) references dept(deptid),
+	ename varchar(50)
+);
+
+create table emp12(
+	eid int(11),
+	deptid int(11),
+	ename varchar(50),	
+	foreign key(deptid) references dept(deptid) on delete cascade on update cascade
+);
+
+foreign key(deptid) references dept(deptid) on delete (cascade) or (set null) or (restrict)
+
+create table emp(
+	eid int(11),
+	ename varchar(50),
+	deptid int(11)
+);
+
+create table dept(
+	deptid int(11),
+	dname varchar(20)
+);
+
+alter table emp add constraint foreign key(deptid) references dept(deptid);
+alter table emp add constraint emp_dept_foreign_key foreign key(deptid) references dept(deptid);
+alter table emp12 drop foreign key emp12_ibfk_1;
+
+cross join 
+inner join
+left join
+right join
+self join
+
+select * from emp, dept;
+select * from emp cross join dept;
+select * from emp e cross join dept d;
+select * from emp e cross join dept d where e.deptid=d.deptid;
+select * from emp e inner join dept d on e.deptid=d.deptid;
+select * from employees e join departments d on e.deptid=d.deptid;
+select * from employees e inner join departments d on e.deptid=d.deptid;
+select * from employees e inner join departments d on e.deptid=d.deptid order by city;
+select * from employees e inner join departments d on e.deptid=d.deptid order by d.city;
+select * from employees e inner join departments d on e.deptid=d.deptid where d.city='mumbai';
+select * from country c, state s, city ci where c.cid=s.cid and s.sid=ci.sid;
+select * from country c join state s on c.cid=s.cid join city ci on s.sid=ci.sid;
+select d.dname, count(*) from employees e inner join departments d on e.deptid=d.deptid group by d.dname;
+select d.dname, count(*) as cnt from employees e inner join departments d on e.deptid=d.deptid group by d.dname order by cnt desc limit 1;
+select d.dname, count(e.ename) as cnt from employees e inner join departments d on e.deptid=d.deptid group by d.dname order by cnt desc limit 1;
+select d.dname, count(*) as cnt from employees e inner join departments d on e.deptid=d.deptid group by d.dname having cnt>2;
+select * from employees e left outer join departments d on e.deptid=d.deptid;
+select * from employees e left  join departments d on e.deptid=d.deptid;
+select * from employees e right outer join departments d on e.deptid=d.deptid;
+select * from employees e right join departments d on e.deptid=d.deptid;
+select * from employees e right outer join departments d on e.deptid=d.deptid where e.eid is null;
+select d.dname, if(count(e.ename)=0,'no','yes') as cnt from employees e right outer join departments d on e.deptid=d.deptid group by d.dname;
+select d.dname, sum(if(e.gender='m',1,0)) as males, sum(if(e.gender='f',1,0)) as females from employees e right outer join departments d on e.deptid=d.deptid group by d.dname;
+select d.dname, sum(case(e.gender) when 'm' then 1 else 0 end) as males, sum(case(e.gender) when'f' then 1 else 0 end) as females from employees e right outer join departments d on e.deptid=d.deptid group by d.dname;
+select e.ename as employee, m.ename as manager from employees e join employees m on e.mgrid=m.eid;
+select e.ename as employee, m.ename as manager from employees e join employees m on e.mgrid=m.eid where m.ename='nikhil';
+select m.ename, count(e.ename) as manager from employees e join employees m on e.mgrid=m.eid group by m.ename;
+select e.ename, d.ename from employees e join employees d on extract(year from e.hiredate)=extract(year from d.hiredate) and e.ename!=d.ename where e.deptid=20 and d.deptid=20;
+
+subquery
+
+select count(*) from employees where salary > (select salary from employees where ename='vaibhav');
+select count(*) from employees where salary > (select avg(salary) from employees);
+select * from employees where extract(year from hiredate)= (select extract(year from hiredate) from employees where ename ='sonali');
+select * from employees where eid= (select mgrid from employees where ename ='sonali');
+select * from employees where mgrid= (select eid from employees where ename ='nikhil') and designation='Manager';
+select * from employees where salary= (select max(salary) from employees where deptid =20) and deptid=20;
+select * from employees where salary < (select max(salary) from employees) order by salary desc;
+select ename from employees where eid in (select mgrid from employees);
+select dname from departments where deptid not in(select distinct from employees);
+select max(salary) from employees where salary not in(select max(salary) from employees);
+
+a query to find the names of those employees whose salary is greater than the average salary of their departments
+
+select ename,salary, deptid from employees e where salary>(select avg(salary) from employees where deptid = e.deptid);
+select ename from employees e where exists(select 'bb' from employees where mgrid=e.eid);
+select dname from departments d where not exists(select 'aa' from employees where deptid=d.deptid);
+
+indexers(clustered and secondary)
+
+create index index2 on employees(salary);
+drop index index2 on employees;
+
+desc information_schema.innodb_sys_tables;
+select table_id from information_schema.innodb_sys_tables where name='publisher/employees';
+select * from information_schema.innodb_sys_indexes where table_id= 750;
+
+views(simple, complex)
+
+create view v1 as select * from emp;
+create view v2 as select * from emp where deptid>21 with check option;\\
+
+procedure
+
+delimiter //
+create procedure pp1()
+begin
+select * from emp;
+end //
+
+Trigger
+delimiter $$
+create trigger trig_emp after insert
+on emp
+for each row
+begin
+	insert into test1 values('1111111111111');
+end $$
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+);
+);

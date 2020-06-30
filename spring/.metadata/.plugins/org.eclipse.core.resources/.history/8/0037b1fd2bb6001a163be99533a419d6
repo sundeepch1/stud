@@ -1,0 +1,6 @@
+package autowise.byname;
+
+public class PanCard {
+	private String name;
+	private String number;
+}

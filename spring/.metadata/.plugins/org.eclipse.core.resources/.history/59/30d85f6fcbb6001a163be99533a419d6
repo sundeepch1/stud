@@ -1,0 +1,7 @@
+package com.infotech.custom.event;
+
+import org.springframework.context.ApplicationListener;
+
+public class CustomEventHandler implements ApplicationListener<E> {
+
+}

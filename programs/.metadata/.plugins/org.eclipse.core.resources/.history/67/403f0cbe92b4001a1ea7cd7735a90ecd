@@ -1,0 +1,5 @@
+package DefaultMethoInInterface;
+
+public interface A {
+
+}

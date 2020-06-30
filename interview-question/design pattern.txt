@@ -1,0 +1,151 @@
+1. Singleton design pattern
+-creational design pattern:-creation of object in java.
+-Only one instance of the class should exist.
+-Other classes should be able to get instance of singleton class.
+-Used in Logging, Cache, Session, Drivers .
+Singleton design pattern implementation.
+-Constructor should be private.
+-Public method for returning instance.
+-Instance type- private static.
+
+Initialisation Type:-
+-Eager Initialisation
+-Lazy Initialisation
+-Thread safe Method Initialisation
+-Thread safe block Initialisation
+
+2. Factory design pattern
+-creational design pattern
+-Used when we have multiple sub-classes of a super class and based on input we want to return one class instance.
+-It provides abstration between implementation and client classes.
+-Remove the instantiation of client classes from client code.
+-Super class can be interface or abstract class or basic class.
+-Factory class has a static method which returns the instance of sub-class based on input.
+
+3. Builder desing pattern
+-creational design pattern
+-Used when we have too many arguments to send in Constructor and it's hard to maintain the order.
+-when we don't want to send all parameters in Object initialisation(Generally we send optional parameters as Null).
+-We create static nested class, which contains all arguments of outer class.
+-As per naming convention, if class name is Vehicle, builder class should be VehicleBuilder.
+-Builder class have a public constructor with all required parameters.
+-Builder class should have methods for optional parameters. method will return the Builder object.
+-A build() method that will return the final Object.
+-The main class Vehicle has private constructor so to create so to create instance only via Builder class.
+-The main class Vehicle has only getters.
+
+4. Prototype design pattern
+-Creational design pattern
+-Used when you want to avoid multiple Object creation of same instance; instead you copy the object to new object and then we can modify as per our need.
+- Object which we're copying should provide copying feature by implementing Cloneable interface.
+- We can override clone() method to implement as per our need
+
+5. Proxy design pattern
+- structural design pattern:- basically it improves the structure of java code.
+- Used when you want to control access i.e. in Databases, you would want to control the delete query available only for certain users like admin.
+- In general, we've class which is executing interface executer method, which is executing all commands.
+- To control this, we add a Proxy class, which implements the same interface and write the conditions for admin user before proceeding to actual executer.
+
+6. Facade design pattern
+- structural design pattern:- basically it improves the structure of java code.
+- Used when there're multiple interfaces of similar kind of jobs, then we add a facade interface, which provide better interface to these interfaces and clients. it basically help in routing to related interface.
+-i.e. Drivers, Databases.
+- We will implement a facade helper class, which will route to method related to specific class based on input.
+
+7. Composite design pattern
+- structural design pattern:- basically it improves the structure of java code.
+-Composite lets client treat indivisual objects(Leaf) and compositions of objects(Composite) uniformly.
+-Four participants:- Component, Leaf, Vomposite, Client
+-if object is leaf node, request is handled directly, if object is composite, it forward request to child, so some operation and combine operations.
+-COmponent: Account class, which contains common method.
+-Leaf: DepositeAccount & SavingAccount
+-Composite: CompositeAccount
+-Client: Client class
+-we will get balance of all account for a person
+
+8.Decorator Design Pattern
+- structural design pattern:- basically it improves the structure of java code.
+-Used when we want to modify functionality of an object at runtime and it should not change individual object functionality.
+-i.e. Adding different functionalities in Dress
+-Dress->Basic Dress ->(Casual Dress, Fancy Dress, Sporty Dress)
+
+9. Flyweight Design Pattern
+- structural design pattern
+- Usec when we create many object of a class. We use it to reduce creation of object
+-Intrinsic Properties: Which are same for object.
+-Extrinsic Properties: which are different for a object.
+- 10^5 then use it
+-Interface: Which contain common method:Employee
+-Object: Individual class: Developer, Tester
+-Intrinsic Proerty(Developer: Fix the issue, Tester: Test the issue)
+-Extrinsic Property: Skills
+-We use Factory to use return object: EmployeeFactory
+-Client: Client class
+-we will assign issues as per skills.
+
+10. Adapter Design Pattern
+- structural design pattern
+- When objects offering same features, but has different interface i.e. charging adapter, USB to Ethernet Adapter.
+-It allows exixting classes to be used with others without modifying their source code.
+-i.e WebDriver Adapter
+-Interface: WebDriver
+-Interface Implementation: ChromeDriver, WebDriverAdapter
+-Adapter: WebDriverAdapter
+-Adaptee: ieDriver
+-Client: AdapterPatternTest
+
+11. Bridge Design Pattern
+- Structural design pattern
+-Used when we've hierarchies in both interfaces as well as implementations nad we want to hide the implementation from client.
+-it decouple abstration from implementation.
+-Generally we have remote, which works differenlty for Sony and Philips TV, but we can different Remote as well, oldRemote na d newremote, which have different methods for Each TV.
+-i.e TV and Remote implementation
+
+12. Observer Design Pattern
+-Behavioural design pattern
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

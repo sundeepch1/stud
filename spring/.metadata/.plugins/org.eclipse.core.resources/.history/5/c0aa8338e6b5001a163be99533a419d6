@@ -1,0 +1,8 @@
+package bean.inheritance;
+
+public class Employee {
+	
+	private Integer id;
+	private String name;
+	private String gender;
+}

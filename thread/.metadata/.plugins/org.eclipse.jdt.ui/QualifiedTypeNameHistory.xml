@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="main.ThreadClass"/>
+<fullyQualifiedTypeName name="workers.MyThread"/>
+<fullyQualifiedTypeName name="javax.lang.model.type.NullType"/>
+<fullyQualifiedTypeName name="java.util.Random"/>
+<fullyQualifiedTypeName name="java.util.Queue"/>
+<fullyQualifiedTypeName name="java.util.LinkedList"/>
+<fullyQualifiedTypeName name="producerconsumer.Producer"/>
+<fullyQualifiedTypeName name="producerconsumer.Consumer"/>
+<fullyQualifiedTypeName name="producerconsumerBlockingQueue.Producer"/>
+<fullyQualifiedTypeName name="java.util.concurrent.BlockingQueue"/>
+<fullyQualifiedTypeName name="java.util.concurrent.ArrayBlockingQueue"/>
+<fullyQualifiedTypeName name="java.lang.Object"/>
+<fullyQualifiedTypeName name="thread_dead_lock_demo.MyThread1"/>
+<fullyQualifiedTypeName name="thread_dead_lock_demo.MyThread2"/>
+<fullyQualifiedTypeName name="anonymousthread.ThreadInterface"/>
+<fullyQualifiedTypeName name="java.lang.Runnable"/>
+<fullyQualifiedTypeName name="java.lang.Thread"/>
+<fullyQualifiedTypeName name="java.util.concurrent.Callable"/>
+<fullyQualifiedTypeName name="java.util.concurrent.TimeUnit"/>
+<fullyQualifiedTypeName name="java.util.concurrent.ThreadPoolExecutor"/>
+<fullyQualifiedTypeName name="java.util.concurrent.Executors"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="factorialcallable.FactorialCalculator"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="java.lang.Runtime"/>
+<fullyQualifiedTypeName name="javax.jws.soap.SOAPBinding"/>
+</qualifiedTypeNameHistroy>

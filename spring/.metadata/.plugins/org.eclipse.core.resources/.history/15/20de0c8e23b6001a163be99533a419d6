@@ -1,0 +1,11 @@
+package bean.post.processor;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class ClientTest {
+	public static void main(String ...strings) {
+		
+		ApplicationContext context = new ClassPathXmlApplicationContext("Message.xml");
+	}
+}

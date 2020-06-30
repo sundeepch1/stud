@@ -1,0 +1,26 @@
+package search;
+
+public class BinarySearch {
+
+	public static void main(String[] args) {
+
+		int values[] = {13, 21, 54, 81, 90};
+	    int target = 81;
+	    int result = binarySearch(values, target);
+
+		if (result == -1) {
+			System.out.println("No");
+		} else {
+			System.out.println("Yes = " + values[result]);
+		}
+
+	}
+
+	private static int binarySearch(int[] values, int target) {
+		
+		int min = 0;
+		int max =  
+		return 0;
+	}
+
+}

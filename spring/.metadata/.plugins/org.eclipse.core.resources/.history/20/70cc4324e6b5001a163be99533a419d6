@@ -1,0 +1,5 @@
+package bean.inheritance;
+
+public class Employee {
+
+}

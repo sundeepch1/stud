@@ -1,0 +1,25 @@
+package DefaultMethoInInterface;
+
+class C implements A, B{
+
+	@Override
+	public void hello() {
+		// TODO Auto-generated method stub
+		A.super.hello();
+	}
+	
+	@Override
+	public void hello() {
+		// TODO Auto-generated method stub
+		A.super.hello();
+	}
+	
+}
+public class DefaultMethoInInterface {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,17 @@
+package com.infotech.model;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.annotation.Message;
+
+public class ClientTest {
+
+	public static void main(String[] args) {
+		ApplicationContext context = new ClassPathXmlApplicationContext("annotation.xml");
+		
+		Message message = context.getBean("message", Message.class);
+		
+		System.out.println(message.getMessageId() + "     " + message.getMessage());
+	}
+}

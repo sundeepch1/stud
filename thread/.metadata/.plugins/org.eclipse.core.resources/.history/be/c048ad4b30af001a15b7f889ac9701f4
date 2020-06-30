@@ -1,0 +1,7 @@
+package factorialcallable;
+
+public class CallableExample {
+	public static void main() {
+		
+	}
+}

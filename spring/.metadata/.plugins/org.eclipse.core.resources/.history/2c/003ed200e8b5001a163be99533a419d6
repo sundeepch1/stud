@@ -1,0 +1,12 @@
+package bean.inheritance;
+
+import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class ClientTest {
+	public static void main(String... strings) {
+		
+		AbstractApplicationContext context = new ClassPathXmlApplicationContext("Message.xml");
+		
+	}
+}

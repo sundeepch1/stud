@@ -1,0 +1,26 @@
+package com.hashmap;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class HashMapClear {
+
+	public static void main(String[] args) {
+		Map<String,Integer> map = new HashMap<>();
+		
+		String s1 = "sundeep";
+		String s2="sundeep";
+		
+		System.out.println(s1.hashCode() + "     " + s2.hashCode());
+		
+		map.put(s1,1);
+		map.put(s2,2);
+				
+
+	}
+
+}
+
+class Employee{
+	
+}

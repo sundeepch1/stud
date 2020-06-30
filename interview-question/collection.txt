@@ -1,0 +1,3 @@
+1. HashMap internal working, node(hash,key,value,next)->hashmap(bucket) but concurrenthashmap(segment)
+2. Fail-fast and Fail-safe iterations in Java Collections
+if iterating over the arrayList at same time either removing or adding an object from that list. when call the next method, it throw concurrent modification exception.However if we use an fail-safe collection e.g. CopyOnWriteArrayList then no exception will occur:

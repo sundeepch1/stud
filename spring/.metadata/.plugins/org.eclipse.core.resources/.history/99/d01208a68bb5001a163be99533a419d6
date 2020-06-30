@@ -1,0 +1,15 @@
+package dependency.injection;
+
+public class Communication {
+
+	private Message message;
+	
+	public void setMesssage(ActiveMQMessage message) {
+		this.message = message;
+	}
+	
+	public void communicate() {
+		message.sendMessage();
+	}
+
+}

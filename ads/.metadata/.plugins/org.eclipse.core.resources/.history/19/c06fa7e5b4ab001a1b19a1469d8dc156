@@ -1,0 +1,36 @@
+package queue;
+
+public class QueueOperation {
+
+	class Queue {
+		private int head, tail;
+		private int a[];
+		private int size;
+
+		public Queue(int size) {
+			this.size = size;
+			this.a = new int[size];
+			this.head = -1;
+			this.tail = -1;
+		}
+
+		public void enqueue(int x) {
+			if (head == -1) {
+				head++;
+			}
+			
+			if (tail == (size - 1)) {
+				System.out.println("!!! Queue overflow !!!");
+			} else {
+				a[++tail]= x;
+			}
+		}
+
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

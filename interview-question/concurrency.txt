@@ -1,0 +1,51 @@
+https://www.youtube.com/watch?v=I8X-3bvkOkU&list=PLsqTRRglN6blQQz_wk4ZZ0ZS-75ywdhXV&index=2
+
+java.util.concurrent defines the core features that support alternatives to the built-in appraches to
+synchronization and interthread communication. Key features:
+
+Sychronizers:
+offer high level ways of synchronizing the interactions between multiple threads.
+Semaphore, CountDownLatch, CyclicBarrier, Exchanger, Phaser
+
+Executors:
+Initiates and controls the execution of threads. Offers an alternative to managing threads through the Thread class.
+
+Concurrent Collections:
+Provide concurrency support. Examples:
+ArrayBlockingQueue, ConcurrentHashMap, ConcurrentLinkedDeque, ConcurrentLinkedQueue etc.
+
+Locks:
+Objects that offer an alternative to using "synchronized" to control access to a shared resource.
+
+Atomic Operations:
+Offers an alternative to the other synchronization features when reading or writing the value of some types of variables.
+
+The Fork/Join Framework:
+Used for Parallel Programming.
+
+1. Semaphore:- A semaphore controls access to a shared resource through the use of a counter. If the counter is greater than zero, then access is allowed. If it is zero, then access is denied. What the counter is counting are permits that allow access to the shared resource. Thus, to access the resource, a thread must be granted a permit from the semaphore.
+2. ThreadLocal:- it is a simple, flexible way to have per-thread data that cannot be accessed concurrently by other threads, without requiring great effort or design compromises. The Java ThreadLocal class enables you to create variables that can only be read and written by the same thread. Thus, even if two threads are executing the same code, and the code has a reference to the same ThreadLocal variable, the two threads cannot see each other's ThreadLocal variables. Thus, the Java ThreadLocal class provides a simple way to make code thread safe that would not otherwise be so.
+3. Thread 
+ThreadPool
+	ExecutorService
+	ForkJoinPool
+4. Join vs sleep vs yield
+sleep() causes the thread to definitely stop executing for a given amount of time; if no other thread or process needs to be run, the CPU will be idle (and probably enter a power saving mode).
+yield() basically means that the thread is not doing anything particularly important and if any other threads or processes need to be run, they should. Otherwise, the current thread will continue to run.
+yield() method pauses the currently executing thread temporarily for giving a chance to the remaining waiting threads of the same priority to execute. If there is no waiting thread or all the waiting threads have a lower priority then the same thread will continue its execution. The yielded thread when it will get the chance for execution is decided by the thread scheduler whose behavior is vendor dependent.
+join() If any executing thread t1 calls join() on t2 i.e; t2.join() immediately t1 will enter into waiting state until t2 completes its execution.
+sleep() Based on our requirement we can make a thread to be in sleeping state for a specified period of time (hope not much explanation required for our favorite method).
+5. ReentrantLock VS ReentrantReadWriteLock
+
+readLock.lock();
+This means that if any other thread is writing (i.e. holds a write lock) then stop here until no other thread is writing.
+Once the lock is granted no other thread will be allowed to write (i.e. take a write lock) until the lock is released.
+writeLock.lock();
+This means that if any other thread is reading or writing, stop here and wait until no other thread is reading or writing.
+Once the lock is granted, no other thread will be allowed to read or write (i.e. take a read or write lock) until the lock is released.
+
+
+
+
+
+

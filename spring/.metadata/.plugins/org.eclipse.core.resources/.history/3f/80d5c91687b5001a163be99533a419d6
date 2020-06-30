@@ -1,0 +1,9 @@
+package dependency.injection;
+
+public class Communication {
+
+	public Communication() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

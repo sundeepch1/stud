@@ -1,0 +1,41 @@
+package injection.collection;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class ClientTest {
+
+	public static void main(String[] args) {
+//		Resource resource = new ClassPathResource("Beans.xml");
+//		BeanFactory beanFactory = new XmlBeanFactory(resource);
+//		Object object = beanFactory.getBean("message");
+//		
+//		if(object != null) {
+//			Message message = (Message)object;
+//			System.out.println( message.getMessage() + "  " + message.getMessageId());
+//		}
+//		
+//		System.out.println("---------------------------------");
+//		Message message = beanFactory.getBean("message", Message.class);
+//		System.out.println( message.getMessage() + "  " + message.getMessageId());
+//		Class<?> class1 = beanFactory.getType("message");
+//		System.out.println(class1);
+		
+		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("collection.xml");
+		OrgInfo info =  applicationContext.getBean("orgInfo", OrgInfo.class);
+		
+		for (Student stu : info.getStuArr()) {
+			System.out.println(stu.getId());
+			System.out.println(stu.getName());
+			System.out.println(stu.getEmail());
+			System.out.println(stu.getGender());
+		}
+		
+		System.out.println( info.getStuList().toString());
+		System.out.println(info.getStuSet().toString());
+		
+		((AbstractApplicationContext) applicationContext).close();
+	}
+
+}

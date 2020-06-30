@@ -1,0 +1,5 @@
+Thread -> 23()
+youtube channel:-Coding Simplified
+https://www.youtube.com/watch?v=uPrt8ZIFWys&list=PLnfapp4Woqpqh_ebAN5mEZWrN4BjaoL_S
+http://tutorials.jenkov.com/java-concurrency/semaphores.html#aslock
+http://javainsimpleway.com/implementing-runnable-vs-extending-thread/

@@ -1,0 +1,12 @@
+package concurrency.thread.local;
+
+public class BasicThreadLocalExample {
+
+	public static void main(String[] args) {
+		ThreadLocal<Integer> tl1 = new ThreadLocal<>();
+		tl1.set(110);
+		System.out.println("TL = " + tl1.get());
+		
+	}
+
+}

@@ -1,0 +1,58 @@
+package com.hashmap;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class HashMapClear {
+
+	public static void main(String[] args) {
+		Map<Integer,String> map = new HashMap<Integer,String>();
+		Map<Employee,String> emp = new HashMap<Employee, String>();
+		
+		Employee e1=new Employee(3);
+		Employee e2= new Employee(3);
+		
+		emp.put(e1, "jack");
+		emp.put(e2, "jack");
+		
+		Integer i1 = new Integer(1);
+		Integer i2 = new Integer(1);
+		
+		map.put(i1, "one");
+		map.put(i2, "one");
+		
+		System.out.println("Map = " + emp.size());
+		System.out.println("EMP = " + map.size());
+				
+
+	}
+
+}
+
+class Employee{
+	int id;
+	public Employee(int id) {
+		this.id = id;
+	}
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + id;
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Employee other = (Employee) obj;
+		if (id != other.id)
+			return false;
+		return true;
+	}
+	
+}

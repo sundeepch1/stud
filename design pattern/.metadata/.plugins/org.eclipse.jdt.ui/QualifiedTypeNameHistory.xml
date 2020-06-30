@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="singleton.design.pattern.SingletonExample"/>
+<fullyQualifiedTypeName name="singleton.design.pattern.SingletonEagar"/>
+<fullyQualifiedTypeName name="singleton.design.pattern.SingletonSynchronizedMethod"/>
+<fullyQualifiedTypeName name="singleton.design.pattern.SingletonSynchronized"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.lang.Cloneable"/>
+</qualifiedTypeNameHistroy>

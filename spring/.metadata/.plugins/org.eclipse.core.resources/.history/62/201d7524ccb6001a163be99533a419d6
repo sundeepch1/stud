@@ -1,0 +1,25 @@
+package com.infotech.custom.event;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.Lifecycle;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.infotech.model.Message;
+
+
+public class ClentTest {
+
+	public static void main(String[] args) {
+		
+		ConfigurableApplicationContext applicationContext = new ClassPathXmlApplicationContext("event.xml");
+		
+		
+		Message message = applicationContext.getBean("message", Message.class);
+		System.out.println(message.getMessageId() + "    " + message.getMessage());
+		
+		
+		((ConfigurableApplicationContext) applicationContext).close();
+	}
+
+}

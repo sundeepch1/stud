@@ -1,0 +1,9 @@
+scp admin@13.232.129.126:~/energy_enviro_v3_04may.sql.gz ./
+
+Session Management
+1. Request
+2. HttpSession session = request.getSession();
+   session.setAttrbute("name", variable);
+3. Context
+   ServletContext context = request.getServletContext();
+   context.setAttrbute("name", variable);

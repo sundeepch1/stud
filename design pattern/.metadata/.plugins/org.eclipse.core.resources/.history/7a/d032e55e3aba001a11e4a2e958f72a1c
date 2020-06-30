@@ -1,0 +1,11 @@
+package factory.design.pattern;
+
+public class Car extends Vehicle {
+
+	@Override
+	public int getWheel() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

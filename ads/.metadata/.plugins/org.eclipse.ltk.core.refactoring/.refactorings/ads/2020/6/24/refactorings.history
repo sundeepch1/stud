@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;search&apos; to &apos;searching&apos;&#x0A;- Original project: &apos;ads&apos;&#x0A;- Original element: &apos;ads/src/search&apos;&#x0A;- Renamed element: &apos;ads/src/searching&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;search&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;search" name="searching" qualified="false" references="true" stamp="1591705808150" textual="false" version="1.0"/>
+</session>
