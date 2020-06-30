@@ -1,7 +1,0 @@
-package method.injection;
-
-public abstract class TicketvendingMachine {
-	Ticket generateTicket() {
-		
-	}
-}

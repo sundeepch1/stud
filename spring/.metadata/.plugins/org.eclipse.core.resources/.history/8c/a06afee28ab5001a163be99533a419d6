@@ -1,8 +1,0 @@
-package dependency.injection;
-
-public class ActiveMQMessage {
-	
-	public void sendMessage() {
-		System.out.println("Message send successfully");
-	}
-}

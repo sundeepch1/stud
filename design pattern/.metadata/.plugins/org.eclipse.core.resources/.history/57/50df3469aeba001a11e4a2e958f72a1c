@@ -1,5 +1,0 @@
-package proxy.design.pattern;
-
-public class DatabaseExecuterImpl {
-
-}

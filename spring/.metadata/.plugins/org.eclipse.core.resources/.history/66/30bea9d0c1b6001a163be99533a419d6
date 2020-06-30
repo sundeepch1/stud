@@ -1,7 +1,0 @@
-package com.infotech.event.handler;
-
-import org.springframework.context.ApplicationListener;
-
-public class ContextStoppedEventHandler implements ApplicationListener<ContextStoppedEvent> {
-
-}
