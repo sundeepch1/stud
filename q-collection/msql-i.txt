@@ -1,0 +1,85 @@
+1. How to filter duplicate row from database.
+DELETE n1 FROM names n1, names n2 WHERE n1.id > n2.id AND n1.name = n2.name;
+SELECT
+     day, COUNT(day),
+     month, COUNT(month),
+     year, COUNT(year)
+FROM 
+     dates
+GROUP BY
+     day,
+     month,
+     year
+HAVING 
+     COUNT(day) > 1
+     AND COUNT(month) > 1
+     AND COUNT(year) > 1;
+
+or
+delete t1 FROM dates t1
+INNER  JOIN dates t2
+WHERE
+    t1.id > t2.id AND
+    t1.day = t2.day AND
+    t1.month = t2.month AND
+    t1.year = t2.year;
+
+2. Second Highest salary
+SELECT MAX(salary) FROM Employee WHERE Salary NOT IN ( SELECT Max(Salary) FROM Employee);
+SELECT MAX(Salary) From Employee WHERE Salary < ( SELECT Max(Salary) FROM Employee);
+
+3. select n th highest salary?
+SELECT salary FROM Employee ORDER BY salary DESC LIMIT N-1, 1;
+
+4. self join employee and manager
+select e.ename as employee, m.ename as manager from employees e join employees m on e.mgrid=m.eid;
+
+2.Joins:- A SQL Join statement is used to combine data or rows from two or more tables based on a common field between them. Different types of Joins are:
+1. INNER JOIN: The INNER JOIN keyword selects all rows from both the tables as long as the condition satisfies. This keyword will create the result-set by combining all rows from both the tables where the condition satisfies i.e value of the common field will be same.
+2. LEFT JOIN: This join returns all the rows of the table on the left side of the join and matching rows for the table on the right side of join. The rows for which there is no matching row on right side, the result-set will contain null. LEFT JOIN is also known as LEFT OUTER JOIN.
+3.RIGHT JOIN: RIGHT JOIN is similar to LEFT JOIN. This join returns all the rows of the table on the right side of the join and matching rows for the table on the left side of join. The rows for which there is no matching row on left side, the result-set will contain null. RIGHT JOIN is also known as RIGHT OUTER
+4.FULL JOIN: FULL JOIN creates the result-set by combining result of both LEFT JOIN and RIGHT JOIN. The result-set will contain all the rows from both the tables. The rows for which there is no matching, the result-set will contain NULL values
+
+INSERT INTO dates (day,month,year) VALUES ('29','January','2011');
+INSERT INTO dates (day,month,year) VALUES ('30','January','2011');
+INSERT INTO dates (day,month,year) VALUES ('30','January','2011');
+INSERT INTO dates (day,month,year) VALUES ('14','February','2018');
+INSERT INTO dates (day,month,year) VALUES ('14','February','2018');
+INSERT INTO dates (day,month,year) VALUES ('23','March','2018');
+INSERT INTO dates (day,month,year) VALUES ('23','March','2018');
+INSERT INTO dates (day,month,year) VALUES ('23','March','2019');
+INSERT INTO dates (day,month,year) VALUES ('29','October','2019');
+INSERT INTO dates (day,month,year) VALUES ('29','November','2019');
+INSERT INTO dates (day,month,year) VALUES ('12','November','2017');
+INSERT INTO dates (day,month,year) VALUES ('17','August','2018');
+INSERT INTO dates (day,month,year) VALUES ('05','June','2016');
+
+5. Many to many relationship
+Authers and Books=> One Authers write many books, one book having many authers.
+Students and Course => One course having many students, one student studying many courses.
+Teacher and Student => One Student study by different teachers and one teacher teaches many students.
+college and teacher => one teacher teach in many colleges and one college have many teachers.
+developer and project => one project having many developers and one developers works in many projects.
+Many to one relationship
+department and teacher => one department having many teachers
+country to states => one country having many states.
+customer to orders => one customer having many orders.
+Student to project => one student having many projects.
+customer to address => one customer having many address
+user to gmail address => one user having many gmail address.
+one to one relationship
+customer to cart => one customer having one cart
+customer to customers details => one customer having one customers details.
+One employee belongs to one organization.
+One dog belongs to one person (or one family).
+One person has one passport.
+A car model is made by one company.
+A book is published by one company.
+A software program is made by one organization.
+
+
+
+
+
+
+

@@ -20,8 +20,7 @@ Objects that offer an alternative to using "synchronized" to control access to a
 Atomic Operations:
 Offers an alternative to the other synchronization features when reading or writing the value of some types of variables.
 
-The Fork/Join Framework:
-Used for Parallel Programming.
+The Fork/Join Framework:Used for Parallel Programming.Doing a lot of things at once.
 
 1. Semaphore:- A semaphore controls access to a shared resource through the use of a counter. If the counter is greater than zero, then access is allowed. If it is zero, then access is denied. What the counter is counting are permits that allow access to the shared resource. Thus, to access the resource, a thread must be granted a permit from the semaphore.
 2. ThreadLocal:- it is a simple, flexible way to have per-thread data that cannot be accessed concurrently by other threads, without requiring great effort or design compromises. The Java ThreadLocal class enables you to create variables that can only be read and written by the same thread. Thus, even if two threads are executing the same code, and the code has a reference to the same ThreadLocal variable, the two threads cannot see each other's ThreadLocal variables. Thus, the Java ThreadLocal class provides a simple way to make code thread safe that would not otherwise be so.
@@ -43,6 +42,16 @@ Once the lock is granted no other thread will be allowed to write (i.e. take a w
 writeLock.lock();
 This means that if any other thread is reading or writing, stop here and wait until no other thread is reading or writing.
 Once the lock is granted, no other thread will be allowed to read or write (i.e. take a read or write lock) until the lock is released.
+
+6. Why Multithreading?
+There are several reasons as to why one would use multithreading in an application. Some of the most common reasons for multithreading are:
+Better utilization of a single CPU.
+Better utilization of multiple CPUs or CPU cores.
+Better user experience with regards to responsiveness.
+Better user experience with regards to fairness.
+
+7. Concurrency Models
+The first Java concurrency model assumed that multiple threads executing within the same application would also share objects. This type of concurrency model is typically referred to as a "shared state concurrency model". A lot of the concurrency language constructs and utilities are designed to support this concurrency model.
 
 
 

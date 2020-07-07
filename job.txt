@@ -24,6 +24,8 @@ create table jobs(
 7.HR Devi and Associates
 8.careers@oodlestechnologies.com
 
+https://bellurbis.com/careers/
+
 
 
 

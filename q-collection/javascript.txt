@@ -1,0 +1,22 @@
+1. Following are the features of JavaScript −
+JavaScript is a lightweight, interpreted programming language.
+JavaScript is designed for creating network-centric applications.
+JavaScript is complementary to and integrated with Java.
+JavaScript is is complementary to and integrated with HTML.
+JavaScript is open and cross-platform.
+
+2. What are disadvantages of using JavaScript?
+We can not treat JavaScript as a full fledged programming language. It lacks the following important features −
+Client-side JavaScript does not allow the reading or writing of files. This has been kept for security reason.
+JavaScript can not be used for Networking applications because there is no such support available.
+JavaScript doesn't have any multithreading or multiprocess capabilities.
+
+3. Objetc Literals vs 
+If you don't have behaviour associated with an object (i.e. if the object is just a container for data/state), I would use an object literal.
+var data = {
+    foo: 42,
+    bar: 43
+};
+Apply the KISS principle. If you don't need anything beyond a simple container of data, go with a simple literal.
+
+If you want to add behaviour to your object, you can go with a constructor and add methods to the object during construction or give your class a prototype.

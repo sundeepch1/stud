@@ -1,0 +1,69 @@
+1. What is angular?
+1. AngularJS is a powerful JavaScript based development framework.
+2. AngularJS provides developers options to write client side application (using JavaScript) in a clean MVC (Model View Controller) way.
+
+2.What is data binding in AngularJS?
+Data binding is the automatic synchronization of data between model and view components. ng-model directive is used in data binding.
+
+3. What are the controllers in AngularJS?
+Controllers are JavaScript functions that are bound to a particular scope. They are the prime actors in AngularJS framework and carry functions to operate on data and decide which view is to be updated to show the updated model based data.
+
+4. What are the services in AngularJS?
+AngularJS come with several built-in services. For example $interval', '$log', $route, $https: service is used to make XMLHttpRequests (Ajax calls). Services are singleton objects which are instantiated only once in app.
+
+5. DOM:-
+Window->Document->HTML->(Header, Body, Footer)
+
+6. What is the difference between properties and attributes in HTML?(Dom property vs HTML attribute)
+
+7.Explain directives in AngularJS.
+Directives are markers on DOM elements (such as elements, attributes, css, and more). These can be used to create custom HTML tags that serve as new, custom widgets. AngularJS has built-in directives (ng-bind, ng-model, etc) to perform most of the task that developers have to do.
+
+8. What is routing in AngularJS?
+It is concept of switching views. AngularJS based controller decides which view to render based on the business logic.
+
+9.What are AngularJS expressions?
+Expressions are used to bind application data to html. Expressions are written inside double braces like {{ expression}}. Expressions behave in same way as ng-bind directives. AngularJS application expressions are pure JavaScript expressions and outputs the data where they are used.
+
+10. How to validate data in AngularJS?
+AngularJS enriches form filling and validation. We can use $dirty and $invalid flags to do the validations in seamless way. Use novalidate with a form declaration to disable any browser specific validation.
+Following can be used to track error.
+$error	$error object contains all the validation attributes applied to the specified element.
+$pristine	Returns true if the user has not interacted with control yet else returns false.
+$valid		Returns true if the model is valid
+$invalid	Returns true if the model is invalid
+$dirty		Returns true if user changed the value of model at least once
+$touched	Returns true if the user has tabbed out from the control.
+$untouched	Returns true if the user has not tabbed out from the control.
+
+11. What is use of $routeProvider in AngularJS?
+$routeProvider is the key service which set the configuration of urls, maps them with the corresponding html page or ng-template, and attaches a controller with the same.
+
+12. service vs factory
+Essentially, factories are functions that return the object, while services are constructor functions of the object which are instantiated with the new keyword.
+Services
+Syntax: module.service( 'serviceName', function );
+Result: When declaring serviceName as an injectable argument you will be provided with an instance of the function. In other words new FunctionYouPassedToService().
+Factories
+Syntax: module.factory( 'factoryName', function );
+Result: When declaring factoryName asa an injectable argument you will be provided with the value that is returned by invoking the function reference passed to module.factory.
+Providers
+Syntax: module.provider( 'providerName', function );
+Result: When declaring providerName as an injectable argument you will be provided with (new ProviderFunction()).$get(). The constructor function is instantiated before the $get method is called - ProviderFunction is the function reference passed to module.provider.
+
+13. What is internationalization?
+Internationalization is a way to show locale specific information on a website. For example, display content of a website in English language in United States and in Danish in France.
+
+14. SPA
+Single page application (SPA) is a web application that fits on a single page. All your code (JS, HTML, CSS) is retrieved with a single page load. And navigation between pages performed without refreshing the whole page.
+
+
+
+
+
+
+
+
+
+
+

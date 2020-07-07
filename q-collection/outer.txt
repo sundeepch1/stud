@@ -1,0 +1,8 @@
+1. Mean stack developer:
+This program will advance your career as a MEAN stack developer. You’ll learn top skills such as MongoDB, Express.js, Angular, and Node.js (“MEAN”), plus GIT, HTML, CSS, and JavaScript to build and deploy interactive applications and services.
+
+2. Kafka:
+Apache Kafka is an open-source stream-processing software platform developed by the Apache Software Foundation, written in Scala and Java. Kafka is often used in real-time streaming data architectures to provide real-time analytics
+
+3. Kafka vs RabbitMQ:
+

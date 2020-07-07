@@ -1,0 +1,69 @@
+1. What is spring boot(spring boot=spring framework - xml-configuration + integrated server)?
+1. Spring Boot provides a good platform for Java developers to develop a stand-alone and production-grade spring application that you can just run.
+2. we do not need manual configuration. Spring boot provides auto configuration like database configuration, spring mvc configuration etc.
+3. We do not need to install server to run spring project. It provides embedded server like tomcat.
+4. We do not about jars version miss-matched, it resove automatically.
+5. It provides the annotation based spring application
+
+2. What does the @SpringBootApplication annotation do internally?
+As per the Spring Boot doc, the @SpringBootApplication annotation is equivalent to using @Configuration, @EnableAutoConfiguration, and @ComponentScan with their default attributes. Spring Boot enables the developer to use a single annotation instead of using multiple. But, as we know, Spring provided loosely coupled features that we can use for each individual annotation as per our project needs.
+
+3. How to exclude any package without using the basePackages filter?
+There are different ways you can filter any package. But Spring Boot provides a trickier option for achieving this without touching the component scan. You can use the exclude attribute while using the annotation  @SpringBootApplication. See the following code snippet:
+@SpringBootApplication(exclude= {Employee.class})
+public class FooAppConfiguration {}
+
+4. How to disable a specific auto-configuration class?
+1. @EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class})
+2. @EnableAutoConfiguration(excludeName={Foo.class})
+3. spring.autoconfigure.exclude=org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration in appication.properties
+
+5. What is the Spring Initializer?
+The Spring Initializer is a web application that generates a Spring Boot project with everything you need to start it quickly. As always, we need a good skeleton of the project; it helps you to create a project structure/skeleton properly. You can learn more about the Initializer here.
+
+6. What is Spring Actuator? What are its advantages?
+Spring Boot Actuator is a sub-project of the Spring Boot Framework. It includes a number of additional features that help us to monitor and manage the Spring Boot application. It contains the actuator endpoints (the place where the resources live). We can use HTTP and JMX endpoints to manage and monitor the Spring Boot application. If we want to get production-ready features in an application, we should use the Spring Boot actuator. It provides many features, i.e. what beans are created, the mapping in the controller, the CPU usage, etc. Automatically gathering and auditing health and metrics can then be applied to your application
+
+7.  Is this possible to change the port of Embedded Tomcat server in Spring boot?
+Yes, it's possible to change the port. You can use the application.properties file to change the port. But you need to mention "server.port" (i.e. server.port=8081). Make sure you have application.properties in your project classpath; REST Spring framework will take care of the rest. If you mention server.port=0 , then it will automatically assign any available port.
+
+8. Can we override or replace the Embedded Tomcat server in Spring Boot?
+Yes, we can replace the Embedded Tomcat with any other servers by using the Starter dependencies. You can use spring-boot-starter-jetty  or spring-boot-starter-undertow as a dependency for each project as you need.
+
+9. Can we disable the default web server in the Spring Boot application?
+The major strong point in Spring is to provide flexibility to build your application loosely coupled. Spring provides features to disable the web server in a quick configuration. Yes, we can use the application.properties to configure the web application type, i.e.  spring.main.web-application-type=none.
+
+10. How to create Spring Boot application using Maven?
+There are multiple approaches to create Spring Boot project. We can use any of the following approach to create application.
+Spring Maven Project
+Spring Starter Project Wizard
+Spring Initializr
+Spring Boot CLI
+
+11. Environment Variables
+Put all the configuration in properties file rather than hard code in application.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

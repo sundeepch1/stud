@@ -1,0 +1,19 @@
+1. JpaRepository vs CrudRepository
+JpaRepository extends PagingAndSortingRepository which in turn extends CrudRepository.
+
+Their main functions are:
+
+CrudRepository mainly provides CRUD functions.
+PagingAndSortingRepository provides methods to do pagination and sorting records.
+JpaRepository provides some JPA-related methods such as flushing the persistence context and deleting records in a batch.
+Because of the inheritance mentioned above, JpaRepository will have all the functions of CrudRepository and PagingAndSortingRepository. So if you don't need the repository to have the functions provided by JpaRepository and PagingAndSortingRepository , use CrudRepository.
+
+2. What are the types of cascade supported by JPA?
+Following is the list of cascade type: -
+
+PERSIST: In this cascade operation, if the parent entity is persisted then all its related entity will also be persisted.
+MERGE: In this cascade operation, if the parent entity is merged, then all its related entity will also be merged.
+DETACH: In this cascade operation, if the parent entity is detached, then all its related entity will also be detached.
+REFRESH: In this cascade operation, if the parent entity is refreshed, then all its related entity will also be refreshed.
+REMOVE: In this cascade operation, if the parent entity is removed, then all its related entity will also be removed.
+ALL In this case, all the above cascade operations can be applied to the entities related to the parent entity.

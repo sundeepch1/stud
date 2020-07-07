@@ -3,3 +3,11 @@ youtube channel:-Coding Simplified
 https://www.youtube.com/watch?v=uPrt8ZIFWys&list=PLnfapp4Woqpqh_ebAN5mEZWrN4BjaoL_S
 http://tutorials.jenkov.com/java-concurrency/semaphores.html#aslock
 http://javainsimpleway.com/implementing-runnable-vs-extending-thread/
+https://www.logicbig.com/tutorials/spring-framework/spring-web-mvc/http-session-param.html(project)
+https://www.java67.com/2012/09/java-collection-interview-questions.html
+https://www.objectdb.com
+https://www.youtube.com/watch?v=UIo48_ta2KY&list=PLJc-LD5TzDQToG2MOYDAuCl-JFZoMBxgC&index=15(Spring boot)
+https://www.youtube.com/watch?v=tRBVD8UE2cQ(Spring boot)
+angular 8 + spring boot jwt authentication with spring security example (youtube)
+https://springframework.guru/spring-framework-annotations/(spring annotation)
+https://coderanch.com/t/508980/java/calling-parent-class-method-child(for interview)

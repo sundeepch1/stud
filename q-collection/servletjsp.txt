@@ -1,9 +1,47 @@
 scp admin@13.232.129.126:~/energy_enviro_v3_04may.sql.gz ./
 
-Session Management
+1.Session Management
 1. Request
 2. HttpSession session = request.getSession();
    session.setAttrbute("name", variable);
 3. Context
    ServletContext context = request.getServletContext();
    context.setAttrbute("name", variable);
+
+2. Filter: A filter is an object that is invoked at the preprocessing and postprocessing of a request.It is mainly used to perform filtering tasks such as conversion, logging, compression, encryption and decryption, input validation etc. The servlet filter is pluggable, i.e. its entry is defined in the web.xml file, if we remove the entry of filter from the web.xml file, filter will be removed automatically and we don't need to change the servlet. A filter is an object used to intercept the HTTP requests and responses of your application. By using filter, we can perform two operations at two instances −Before sending the request to the controller,Before sending a response to the client.
+
+3. ServletConfig vs ServletContext
+The ServletConfig parameters are specified for a particular servlet and are unknown to other servlets. It is used for intializing purposes.
+The ServletContext parameters are specified for an entire application outside of any particular servlet and are available to all the servlets within that application. It is application scoped and thus globally accessible across the pages.
+
+4.What is the difference between GET and POST method?
+GET is a safe method (idempotent) where POST is non-idempotent method.
+We can send limited data with GET method and it’s sent in the header request URL whereas we can send large amount of data with POST because it’s part of the body.
+GET method is not secure because data is exposed in the URL and we can easily bookmark it and send similar request again, POST is secure because data is sent in request body and we can’t bookmark it.
+GET is the default HTTP method whereas we need to specify method as POST to send request with POST method.
+Hyperlinks in a page uses GET method.
+
+5. What is MIME Type?
+The “Content-Type” response header is known as MIME Type. Server sends MIME type to client to let them know the kind of data it’s sending. It helps client in rendering the data for user. Some of the mostly used mime types are text/html, text/xml, application/xml etc.
+We can use ServletContext getMimeType() method to get the correct MIME type of the file and use it to set the response content type. It’s very useful in downloading a file through servlet from the server.
+
+6. What is ServletConfig object?
+javax.servlet.ServletConfig is used to pass configuration information to Servlet. Every servlet has it’s own ServletConfig object and servlet container is responsible for instantiating this object. We can provide servlet init parameters in web.xml file or through use of WebInitParam annotation. We can use getServletConfig() method to get the ServletConfig object of the servlet.
+
+7. RequestDispatcher in Servlet:-
+The RequestDispatcher interface provides the facility of dispatching the request to another resource it may be html, servlet or jsp. This interface can also be used to include the content of another resource also. It is one of the way of servlet collaboration. The main difference is that when you use forward the control is transferred to the next servlet/jsp you are calling, while include retains the control with the current servlet, it just includes the processing done by the calling servlet/jsp(like doing any out.println or other processing).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
