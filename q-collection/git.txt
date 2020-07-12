@@ -1,0 +1,6 @@
+1. rebase vs merge
+=> Let us consider, we have two branch master and feature,
+master -> mc1, mc2, mc3
+feature -> fc1, fc2, cf3
+when we merge feature branch in master branch then history feature is not stored in master branch, but git create new commit like cf4 along with mc1, mc2, mc3 and ignores fc1, fc2, cf3 into master branch but still exist in feature branch, merge feature branch into master branch.
+But when rebase all commits into master branch either in master branch and feature branch -> mc1, mc2, fc1, fc2, cf3,  mc3

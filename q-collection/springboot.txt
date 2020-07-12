@@ -43,6 +43,38 @@ Spring Boot CLI
 11. Environment Variables
 Put all the configuration in properties file rather than hard code in application.
 
+12. @ExceptionalHandler:-
+Controller Based – We can define exception handler methods in our controller classes. All we need is to annotate these methods with @ExceptionHandler annotation. This annotation takes Exception class as argument. So if we have defined one of these for Exception class, then all the exceptions thrown by our request handler method will have handled.
+
+13.@ControllerAdvice:- 
+Global Exception Handler – Exception Handling is a cross-cutting concern, it should be done for all the pointcuts in our application. We have already looked into Spring AOP and that’s why Spring provides @ControllerAdvice annotation that we can use with any class to define our global exception handler.
+The handler methods in Global Controller Advice is same as Controller based exception handler methods and used when controller class is not able to handle the exception.
+
+14. Filter vs intercepter
+A filter dynamically intercepts requests and responses to transform or use the information contained in the requests or responses. Filters typically do not themselves create responses, but instead provide universal functions that can be “attached” to any type of servlet or JSP page.
+Authentication-Blocking requests based on user identity. Logging and auditing-Tracking users of a web application. Image conversion-Scaling maps, and so on. Data compression-Making downloads smaller. Localization-Targeting the request and response to a particular locale.
+
+Request Filters can: perform security checks, reformat request headers or bodies, audit or log requests
+Response Filters can: Compress the response stream, append or alter the response stream, create a different response altogether
+Examples that have been identified for this design are
+Authentication Filters
+Logging and Auditing Filters
+Image conversion Filters
+Data compression Filters
+Encryption Filters
+Tokenizing Filters
+Filters that trigger resource access events
+XSL/T filters
+Mime-type chain Filter
+Interceptors
+Interceptors are used in conjunction with Java EE managed classes to allow developers to invoke interceptor methods in conjunction with method invocations or lifecycle events on an associated target class. Common uses of interceptors are logging, auditing, or profiling.
+Interceptors can be defined within a target class as an interceptor method, or in an associated class called an interceptor class. Interceptor classes contain methods that are invoked in conjunction with the methods or lifecycle events of the target class.
+1)  Cookie Interceptor
+2)  Checkbox Interceptor
+3)  FileUpload Interceptor
+
+As I understood from docs, Interceptor is run between requests. On the other hand Filter is run before rendering view, but after Controller rendered response.
+
 
 
 

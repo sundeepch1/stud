@@ -1,0 +1,12 @@
+/adapter/
+/bridge/
+/builder/
+/composite/
+/decorator/
+/facade/
+/factory/
+/flyweight/
+/observer/
+/prototype/
+/proxy/
+/singleton/

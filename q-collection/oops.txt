@@ -1,0 +1,57 @@
+1. why use Interface?
+1) It is a third party specification.
+2) It is used to achieve abstration.
+3) It is used to achieve injection dependency.
+4) Used as funtional interface in call back method.
+
+2. Loose Coupling vs Tight coupling
+Let there is class A and B. Class A contains some methods. When we create the object of class A inside B by using new key word to access the method of class A is called tight coupling. Instead of that we create object of class A and pass the object throught way(from contructer or setter getter properties) inside class the class of B is called loose coupling and it is also called dependency injection. 
+
+2. Why encapsulation?
+1) Encapsulation helps us in binding the data(instance variables) and the member functions(that work on the instance variables) of a class.
+2) Encapsulation hides the data(instance variables) of a class from an illegal direct-access.
+Rules to encapsulation are -
+Keep the access modifiers of instance variables of a class to private or protected.
+Enforce calling public getter, setter methods of the class in order to get or set the value of instance variables of the class.
+Use the JavaBeans naming convention of getters and setters methods for class methods.
+
+3. Difference between encapsulation and abstraction
+While encapsulation helps in hiding the data(instance variables) of a class from an illegal-access, abstraction provides essential general features without providing implementation details, by using an abstract class or an interface.
+
+4. Composition or IS-A relationship between two classes
+An IS-A signifies a relationship between the two classes that are connected to each other through inheritance. The basis of an IS-A relationship is -
+When a class extends another concrete(non-abstract) class.
+When a class extends an abstract class.
+When a class implements an interface.
+
+5. Aggregation or HAS-A relationship between two classes.
+When class A has a reference to the object of another class B, class A is said to be in a HAS-A relationship with class B. Through this reference of class B in it, class A can call and use the needed features of class B, without copying all the unnecessary code of class B in it.
+
+6. Dependency Injection (DI) is a design pattern used to implement IoC. It allows the creation of dependent objects outside of a class and provides those objects to a class through different ways. Using DI, we move the creation and binding of the dependent objects outside of the class that depends on them.Dependency Injection is passing dependency to other objects or framework( dependency injector).dependency injection is a technique in which an object receives other objects that it depends on. 
+
+7. Polymorphism means having many forms, having specific tasks implemented in diffrent ways as per requirements
+
+9. Why method overloading is used?
+Method overloading is mainly used in a situation when we want to create multiple specialized versions of a method in a class, with each version having the same name and doing some specific specialized task.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

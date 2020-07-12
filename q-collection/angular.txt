@@ -8,6 +8,91 @@
 Components control views (html). They also communicate with other components and services to bring functionality to your app.
 Modules consist of one or more components. They do not control any html. Your modules declare which components can be used by components belonging to other modules, which classes will be injected by the dependency injector and which component gets bootstrapped. Modules allow you to manage your components to bring modularity to your app.
 
+getPalindrome(String str){
+
+	Map<Character, Integer> map = new HashMap<String, Integer>();
+	char[] letter = str.toCharArray()
+	for(char c: letter){
+		if(map.contains(c)){
+			map.put(c.toString, map.get(c) + 1);		
+		}else{
+			map.put(c, 1);		
+		}	
+	}
+	
+	int count = 0;
+	char ch = ''; 
+	for(Map.Entry<String, Integer> entry: map.entrySet()){
+		if(entry.getValue() %2 != 0 ){
+			count ++;
+			ch = entry.getKey()		
+		}	
+	}
+
+	String str = "";
+
+	if(oddCount > 1 || oddCount == 1 && str.length() % 2 == 0){
+		sysout("Palindropme is not possible")	
+	}else{
+		for(int i = 1=0; i< str.length; i++){
+					
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

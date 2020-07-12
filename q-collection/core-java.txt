@@ -57,7 +57,8 @@ public class Main
 	}
 }
 
-5.
+5.Lambda Expression in java.
+It is short hand syntax, which is first step in functional programming. A Java lambda expression is thus a function which can be created without belonging to any class. A Java lambda expression can be passed around as if it was an object and executed on demand. Java lambda expressions are commonly used to implement simple event listeners / callbacks, or in functional programming with the Java Streams API. In other words, an interface is still a functional interface even if it contains default and static methods, as long as the interface only contains a single. Lambda Expressions vs. Anonymous Interface Implementations
 
 
 

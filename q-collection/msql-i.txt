@@ -77,6 +77,63 @@ A car model is made by one company.
 A book is published by one company.
 A software program is made by one organization.
 
+6. Indexer
+A database index is a data structure that improves the speed of operations in a table. Indexes can be created using one or more columns, providing the basis for both rapid random lookups and efficient ordering of access to records. Types Clustered and Secondary Indexes.
+Clustered vs Secondary Indexes(non-clustered)
+clustered index: 
+Cluster index is a type of index which sorts the data rows in the table on their key values
+It is created by database engine when user creates primary key in table.
+table contains only one clustered index. 
+It does not allocate extra memory.
+faster.
+Extra work for SQL for inserts, updates, and deletes.
+vs 
+A Non-clustered index stores the data at one location and indices at another location.
+User have to intentionally create secondary index by using create index query. 
+table contains one than secondary index. 
+It allocates extra memory.
+slower
+
+7. Finds number of post count where user_id=1;
+CREATE TABLE `posts` (
+	`id` INT NOT NULL AUTO_INCREMENT,
+	`text` TEXT,
+	`user_id` INT unsigned NOT NULL,
+	`updated_at` TIMESTAMP NOT NULL,
+	`created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `post_likes` (
+	`post_id` INT unsigned NOT NULL,
+	`user_id` INT unsigned NOT NULL,
+	`created_at` TIMESTAMP NOT NULL
+);
+
+select id, text, user_id, updated_at, created_at, (select count(post_id) from post_likes where user_id=1) from posts where user_id=1;
+or
+SELECT p.user_id, COUNT(pl.post_id) FROM posts p inner JOIN post_likes pl on p.user_id = pl.user_id WHERE p.user_id = 1 GROUP BY p.user_id;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -192,6 +192,8 @@ When you provide multiple package names in only one string, Spring interprets th
 27. @ControllerAdvice
 This annotation is applied at the class level. As explained earlier, for each controller you can use @ExceptionHandler on a method that will be called when a given exception occurs. But this handles only those exception that occur within the controller in which it is defined. To overcome this problem you can now use the @ControllerAdvice annotation. This annotation is used to define @ExceptionHandler, @InitBinder and @ModelAttribute methods that apply to all @RequestMapping methods. Thus if you define the @ExceptionHandler annotation on a method in @ControllerAdvice class, it will be applied to all the controllers.
 
+28. The @Configuration annotation indicates that the class is a source of bean definitions. Also, we can add it to multiple configuration classes.
+
 
 
 

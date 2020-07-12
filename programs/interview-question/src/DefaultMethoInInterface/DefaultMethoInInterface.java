@@ -4,7 +4,7 @@ class C implements A, B{
 
 	@Override
 	public void hello() {
-		// TODO Auto-generated method stub
+		B.super.hello();
 		System.out.println("I am C");
 	}
 	

@@ -1,7 +1,5 @@
 package builder.design.pattern;
 
-import builder.design.pattern.Vehicle.VehicleBuilder;
-
 class Vehicle {
 	// required parameter
 	private String engine;
