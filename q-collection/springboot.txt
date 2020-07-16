@@ -75,6 +75,13 @@ Interceptors can be defined within a target class as an interceptor method, or i
 
 As I understood from docs, Interceptor is run between requests. On the other hand Filter is run before rendering view, but after Controller rendered response.
 
+15. Benfits of spring boot over spring framework.
+1) Dependancy resolution
+2) Minimum configuration
+3) Embedded tomcat server for testing
+4) Bean auto scan
+5) Health metrics
+
 
 
 

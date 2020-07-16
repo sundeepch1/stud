@@ -11,7 +11,7 @@ Client-side JavaScript does not allow the reading or writing of files. This has 
 JavaScript can not be used for Networking applications because there is no such support available.
 JavaScript doesn't have any multithreading or multiprocess capabilities.
 
-3. Objetc Literals vs 
+3. Object Literals vs 
 If you don't have behaviour associated with an object (i.e. if the object is just a container for data/state), I would use an object literal.
 var data = {
     foo: 42,

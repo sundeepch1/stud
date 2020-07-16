@@ -5,7 +5,7 @@
 4) Used as funtional interface in call back method.
 
 2. Loose Coupling vs Tight coupling
-Let there is class A and B. Class A contains some methods. When we create the object of class A inside B by using new key word to access the method of class A is called tight coupling. Instead of that we create object of class A and pass the object throught way(from contructer or setter getter properties) inside class the class of B is called loose coupling and it is also called dependency injection. 
+Let there is class A and B. Class A contains some methods. When we create the object of class A inside B by using new key word to access the method of class A is called tight coupling. Instead of that we create object of class A and pass the object through way(from contructer or setter getter properties) inside class the class of B is called loose coupling and it is also called dependency injection. 
 
 2. Why encapsulation?
 1) Encapsulation helps us in binding the data(instance variables) and the member functions(that work on the instance variables) of a class.

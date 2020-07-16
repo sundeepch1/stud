@@ -3,6 +3,12 @@ https://www.youtube.com/watch?v=I8X-3bvkOkU&list=PLsqTRRglN6blQQz_wk4ZZ0ZS-75ywd
 java.util.concurrent defines the core features that support alternatives to the built-in appraches to
 synchronization and interthread communication. Key features:
 
+Methods of thread pool
+1. newFixedThreadPool(int)
+2. newCachedThreadPool()
+3. newScheduledThreadPool(5)
+4. newSingleThreadExecutor()
+
 Sychronizers:
 offer high level ways of synchronizing the interactions between multiple threads.
 Semaphore, CountDownLatch, CyclicBarrier, Exchanger, Phaser

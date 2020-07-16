@@ -8,37 +8,29 @@
 Components control views (html). They also communicate with other components and services to bring functionality to your app.
 Modules consist of one or more components. They do not control any html. Your modules declare which components can be used by components belonging to other modules, which classes will be injected by the dependency injector and which component gets bootstrapped. Modules allow you to manage your components to bring modularity to your app.
 
-getPalindrome(String str){
+3. Comparison between Angular and AngularJS:
+Architecture:
+Angular JS: Supports Model-View-Controller design. The view processes the information available in the model to generate the output.
+Angular: Uses components and directives. Components are the directives with a template.
+Written:
+Angular JS: Written in JavaScript.
+Angular: Written in Microsoft’s TypeScript language, which is a superset of ECMAScript 6 (ES6).
+Mobile support:
+Angular JS: Does not supported by mobile browsers.
+Angular: But Angular supported by all the popular mobile browsers.
+Expression Syntax:
+Angular JS:ng-bind is used to bind data from view to model and vice versa.
+Angular: Properties enclosed in “()” and “[]” are used to bind data b/w view and model.
+Dependency Injection:
+Angular JS: Does not use Dependency Injection.
+Angular: Hierarchical Dependency Injection system used.
+Routing:
+Angular JS: AngularJS uses $routeprovider.when() for routing configuration.
+Angular: Angular uses @Route Config{(…)} for routing configuration.
+Structure:
+Angular JS: It is less manageable in comparison to Angular.
+Angular: Better structure compare to AngularJS, easier to create and maintain large applications but behind in AngularJS in case of small applications.
 
-	Map<Character, Integer> map = new HashMap<String, Integer>();
-	char[] letter = str.toCharArray()
-	for(char c: letter){
-		if(map.contains(c)){
-			map.put(c.toString, map.get(c) + 1);		
-		}else{
-			map.put(c, 1);		
-		}	
-	}
-	
-	int count = 0;
-	char ch = ''; 
-	for(Map.Entry<String, Integer> entry: map.entrySet()){
-		if(entry.getValue() %2 != 0 ){
-			count ++;
-			ch = entry.getKey()		
-		}	
-	}
-
-	String str = "";
-
-	if(oddCount > 1 || oddCount == 1 && str.length() % 2 == 0){
-		sysout("Palindropme is not possible")	
-	}else{
-		for(int i = 1=0; i< str.length; i++){
-					
-		}
-	}
-}
 
 
 

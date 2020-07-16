@@ -1,2 +1,4 @@
 1. Monolithic Architecture
 Monolithic Architecture is like a big container wherein all the software components of an application are assembled together and tightly packedged.
+2. What is micro services?
+
