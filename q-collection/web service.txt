@@ -19,3 +19,6 @@ Simple Object Access Protocol(SOAP) is a network protocol for exchanging structu
 3. In Stateless, server is not needed to keep the server information or session details to itself. where as In stateful, a server is required to maintain the current state and session information.
 4. A failed server can be restarted easily after crash. where as A server has to keep the information of session and other details. Crash management is difficult.
 5. In stateless, server and client are loosely coupled and can act independently. where as In stateful, server and client are tightly bound.
+
+
+

@@ -66,7 +66,11 @@ It is short hand syntax, which is first step in functional programming. A Java l
 3) Resizing: JVM allows you to resize both heap and stack in Java, though you need to use different JVM flags for that. You can use -Xms and -Xmx to specify the starting and maximum heap memory in Java. Similarly, you can use the -Xss to specify the stack size of individual threads in JVM.
 4) Usage: Another significant difference between heap and stack memory comes from their usage perspective. Heap memory is used to store objects in Java. No matter where you create object e.g. inside a method, a class, or a code block, they are always created in heap space and memory is allocated from the heap.One little exception of that is String literals which live in String pool, which was not part of the heap until Java 7. Earlier String pool was created on metaspace, which was separate memory are in JVM used to store class metadata, but from JDK 7 onwards String pool is merged into heap space.On the other hand, Stack memory is used to store local variables e.g. primitive int and boolean variables, method frames, and call stack.
 5) Order: Heap is a large memory area where objects can be created and stored in any order but Stack memory is structured as Stack data structure i.e. LIFO where method calls are stored as last in first out order. This is why you can use recursion in Java.
-6. 6) Heap and Stack Memory Errors: You get different errors when heap or stack memory gets filled. For example, a faulty recursive algorithm can quickly make Stack memory filled up with recursive method calls in that case you will see java.lang.StackOverFlowError. But, when there is no more space left in heap to allocate a new object than you will see the OutOfMemoryError in java e.g. java.lang.OutOfMemoryError: Java Heap Space.
+6) Heap and Stack Memory Errors: You get different errors when heap or stack memory gets filled. For example, a faulty recursive algorithm can quickly make Stack memory filled up with recursive method calls in that case you will see java.lang.StackOverFlowError. But, when there is no more space left in heap to allocate a new object than you will see the OutOfMemoryError in java e.g. java.lang.OutOfMemoryError: Java Heap Space.
+
+7. Advantages of wrapper class
+1)Collections in the first place, for example,List<Integer>, you cannot use primitive int here. 
+2)Actually any generic class / interface that can work with different object types
 
 
 

@@ -5,7 +5,7 @@ public class BinarySearch {
 	public static void main(String[] args) {
 
 		int values[] = { 13, 21, 54, 81, 90, 95, 105, 109, 115, 120 };
-		int target = 81;
+		int target = 120;
 		int result = binarySearch(values, target);
 
 		if (result == -1) {

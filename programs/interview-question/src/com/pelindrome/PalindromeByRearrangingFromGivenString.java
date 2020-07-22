@@ -52,7 +52,7 @@ public class PalindromeByRearrangingFromGivenString {
 
 	public static void main(String[] args) {
 
-		String result = createPalindrome("mmaad");
+		String result = createPalindrome("aabb");
 		System.out.println("Your String = " + result);
 	}
 }

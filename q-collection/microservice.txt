@@ -1,4 +1,7 @@
 1. Monolithic Architecture
 Monolithic Architecture is like a big container wherein all the software components of an application are assembled together and tightly packedged.
-2. What is micro services?
+2. What is micro services?(Distributed)
+While a monolithic application is a single unified unit, a microservices architecture breaks it down into a collection of smaller independent units. These units carry out every application process as a separate service. So all the services have their own logic and the database as well as perform the specific functions.
+In short, the microservice architectural style is an approach to developing a single application as a suite of small services, each running in its own process and communicating with lightweight mechanisms, often an HTTP resource API.Within a microservices architecture, the entire functionality is split up into independently deployable modules which communicate with each other through defined methods called APIs (Application Programming Interfaces). Each service covers its own scope and can be updated, deployed, and scaled independently.
+Martin Fowler
 

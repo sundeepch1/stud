@@ -1,0 +1,5 @@
+1. what is Eureka?
+Im simple word Eureka is service Registry or we can say it is an embedded server providede by NetFlix third party which untegrate with spring framework. Main purpose to use Eureka: Micro service Registration and Discovery with spring cloud and NetFlix Eureka
+
+2. What is the use of Eureka.
+Normally in micro service architecture design we are developing separate services and exposing ech API as service Endpoint and whenever we required to access other services in simple we are accessing it as a Rest Client using third party API either Rest Template or Client Builder
