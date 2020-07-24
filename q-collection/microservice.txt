@@ -5,3 +5,8 @@ While a monolithic application is a single unified unit, a microservices archite
 In short, the microservice architectural style is an approach to developing a single application as a suite of small services, each running in its own process and communicating with lightweight mechanisms, often an HTTP resource API.Within a microservices architecture, the entire functionality is split up into independently deployable modules which communicate with each other through defined methods called APIs (Application Programming Interfaces). Each service covers its own scope and can be updated, deployed, and scaled independently.
 Martin Fowler
 
+3. bodyToMono
+means when we request for resource then we get it in future(means asynchronous) so it is called bodyToMono.
+
+4. Eureka server vs eureka client, @loadBalanced(client side service discovery)
+

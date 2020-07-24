@@ -1,4 +1,4 @@
-package com.sundeep.movieinfoservice.model;
+package com.sundeep.moviecatalogservice.model;
 
 public class Movie {
 	private String movieId;
