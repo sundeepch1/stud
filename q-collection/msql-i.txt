@@ -1,3 +1,18 @@
+. You have to sort the list such that prime and composite numbers are sorted in the ascending and descending order respectively. The final list must contain sorted numbers according to the given condition and the prime numbers must be located on the indices same as the indices of prime numbers in the initially provided list.
+
+You are given a string made of lowercase English letters . Your task is to minimize the length of the string by applying the following operation on the string: Divide the string into two non-empty parts, left and right part. Without reversing any of the parts, swap them with each other by appending the left part to the end of the right part.
+
+
+
+
+Repeat the third step until you do not find such prefix and suffix strings
+
+
+
+
+SELECT MAX(avgSales.TotalSale)
+FROM (SELECT AVG(TotalSale) AS 'TotalSale' FROM Sales GROUP BY SalesPerson) AS avgSales
+
 1. How to filter duplicate row from database.
 DELETE n1 FROM names n1, names n2 WHERE n1.id > n2.id AND n1.name = n2.name;
 SELECT

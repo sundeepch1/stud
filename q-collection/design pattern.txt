@@ -16,7 +16,8 @@ Singleton design pattern implementation.
 -Constructor should be private.
 -Public method for returning instance.
 -Instance type- private static.
-
+	
+elk 
 Initialisation Type:-
 -Eager Initialisation
 -Lazy Initialisation

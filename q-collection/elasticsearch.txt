@@ -1,0 +1,65 @@
+port 9200/tcp by default
+
+wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.8.1-amd64.deb
+wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.8.1-amd64.deb.sha512
+shasum -a 512 -c elasticsearch-7.8.1-amd64.deb.sha512 
+sudo dpkg -i elasticsearch-7.8.1-amd64.deb
+
+ps -p 1
+
+sudo update-rc.d elasticsearch defaults 95 10
+
+sudo -i service elasticsearch start
+sudo -i service elasticsearch stop
+
+1. What is Elasticsearch
+Elasticsearch is able to achieve fast search response because, instead of searching the text directly, it searchse an index.
+it is a search engine based on Lucene. It provides a distributed, multitenant-capable full-text search engine with an HTTP web interface and schema-free JSON documents. It is developed in java and is released as open source under the terms of the Apache License.
+
+2. Why we need elasticsearch?
+Implement simle/fuzzy serach
+Implement Analytics
+Autocomplete and instant search
+
+3. Kibana
+Kibana is a window into the Elastic Stack.
+It enables visual exploration and real-time analysis of data in elasticsearch
+
+4. Cluster: it is collection of nodes.
+5. Node(uuid universaly unique identifier): node is single server that stores all the data and participate in cluster indexing and search capability. it contains Shards and Replica.
+6. Shards
+7. Replicas
+8. Index = database name
+9. Document object in json = row in table
+10. Type = doc(table name in db)
+11. Mapping
+
+12. Elasticsearch API
+1) Document API
+2) Search API
+3) Indices API
+4) Cat API
+5) Cluster API
+
+13. Document API
+1) Single Document APIs:- 
+a) Index API:- The index API adds and updates a typed JSON document in a specific index, making it searchable
+b) Get API, Delete API, Update API
+2) Multi Document APIs:- Multi get API, Bulk API, Delete by query API, Update by query API, Reindex API	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

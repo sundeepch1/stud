@@ -1,8 +1,9 @@
 1. why use Interface?
 1) It is a third party specification.
 2) It is used to achieve abstration.
-3) It is used to achieve injection dependency.
+3) It is used to achieve dependency injection.
 4) Used as funtional interface in call back method.
+5) Marker interface
 
 2. Loose Coupling vs Tight coupling
 Let there is class A and B. Class A contains some methods. When we create the object of class A inside B by using new key word to access the method of class A is called tight coupling. Instead of that we create object of class A and pass the object through way(from contructer or setter getter properties) inside class the class of B is called loose coupling and it is also called dependency injection. 
@@ -41,6 +42,7 @@ when method with static keyword in super class, implement such method with same 
 1) The methods with same name and different signature is called method overloading. The method in super class is implemented with same name, same signature and same return type in sub class is called method overriding.
 2) we have not right any keyword to overloading methods but @override keyword to overriding methods.
 3) overloading is possible either with inheritance or without inheritance but overriding is possible with inheritance.
+The return type of overriding method must be a covariant type (same class or sub-class), i.e. you can narrow down the return type.
 
 12. static method 
 static method work as utility method in class. when we do not want to create object but use the static method in this case we create static method because creation of object is expensive.
@@ -48,7 +50,22 @@ static method work as utility method in class. when we do not want to create obj
 13. Abstract class
 if we some default funtionality, and class does not represent any real entity that's why we do not allow to create object that class 
 
+14. What is an immutable class in Java?
+Immutable objects are instances whose state doesn’t change after it has been initialized. For example, String is an immutable class and once instantiated its value never changes.
 
+15. Benefits of Immutable Class in Java
+1) An immutable class is good for caching purposes because you don’t have to worry about the value changes.
+2) Another benefit of immutable class is that it is inherently thread-safe, so you don’t have to worry about thread safety in case of multi-threaded environment.
+
+16. How to Create an immutable class in Java?
+To create an immutable class in Java, you have to do the following steps.
+Declare the class as final so it can’t be extended.
+Make all fields private so that direct access is not allowed.
+Don’t provide setter methods for variables.
+Make all mutable fields final so that its value can be assigned only once.
+Initialize all the fields via a constructor performing deep copy.
+Perform cloning of objects in the getter methods to return a copy rather than returning the actual object reference.
+if we implement mutable class object then return clone copy of that class. clone with Constructors, clone with serialization
 
 
 

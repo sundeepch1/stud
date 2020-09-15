@@ -1,0 +1,23 @@
+jupiter, vintage
+1. @Test, which tells the JUnit that the public void method in which it is used can run as a test case.
+assertEquals, assertArrayEquals, asertIterableEquals
+
+2. @RunWith(SpringRunner.class):-
+3. @SpringBootTest:-
+4. webEnvironment:-
+5. @LocalServerPort:-
+6. @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
+7. @DataJpaTest
+8. @AutoConfigureTestDatabase
+
+create table employee(
+	id int primary key auto_increment,
+        first_name varchar(30),
+        last_name varchar(30),
+        email varchar(30)	
+);
+
+
+ insert into employee values(null,"Lokesh", "Gupta", "howtodoinjava@gmail.com");
+ insert into employee values(null,"Alex", "Kolenchiskey", "abc@gmail.com");
+ insert into employee values(null,"David", "Kameron", "titanic@gmail.com");

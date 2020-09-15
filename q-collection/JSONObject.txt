@@ -1,0 +1,16 @@
+1. JSONObject:- A JSONObject is an unordered collection of key and value pairs, resembling Java's native Map implementations.
+Keys are unique Strings that cannot be null
+Values can be anything from a Boolean, Number, String, JSONArray or even a JSONObject.NULL object
+A JSONObject can be represented by a String enclosed within curly braces with keys and values separated by a colon, and pairs separated by a comma
+It has several constructors with which to construct a JSONObject
+It also supports the following main methods:
+get(String key) – gets the object associated with the supplied key, throws JSONException if the key is not found
+opt(String key)- gets the object associated with the supplied key, null otherwise
+put(String key, Object value) – inserts or replaces a key-value pair in current JSONObject.
+The put() method is an overloaded method which accepts a key of type String and multiple types for the value.
+
+2. Integer to String
+1. Integer.toString(int)
+2. String.valueOf(int)
+3. Integer(int).toString()
+

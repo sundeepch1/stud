@@ -31,6 +31,8 @@ Structure:
 Angular JS: It is less manageable in comparison to Angular.
 Angular: Better structure compare to AngularJS, easier to create and maintain large applications but behind in AngularJS in case of small applications.
 
+preloading, eager loading, lazy loading
+
 
 
 

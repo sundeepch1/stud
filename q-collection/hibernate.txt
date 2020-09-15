@@ -53,6 +53,11 @@ create-drop: drop the schema when the SessionFactory is closed explicitly, typic
 none: does nothing with the schema, makes no changes to the database
 
 
+Criteria Builder
+1. You obtain a javax.persistence.criteria.CriteriaBuilder instance by calling the getCriteriaBuilder() method of either javax.persistence.EntityManagerFactory or javax.persistence.EntityManager.
+
+
+
 
 
 

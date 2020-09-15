@@ -1,0 +1,192 @@
+for multiple node:- mkdir /tmp/zookeeper-3
+echo 2 >> /tmp/zookeeper-2/myid
+
+
+Commands:- 
+to check status of server:- echo stat | nc localhost 2181
+to check broker status in zookeeper:- echo dump | nc localhost 2181 | grep brokers
+
+bin/kafka-server-start.sh -daemon config/server.properties
+tail -100f logs/server.log
+
+to create topics:- bin/kafka-topics.sh --bootstrap-server localhost:9092 --create --topic myTopic --partitions 1 --replication-factor 1
+to list the topics:- bin/kafka-topics.sh --bootstrap-server localhost:9092 --list
+to describe the topics:- bin/kafka-topics.sh --bootstrap-server localhost:9092 --describe myTopic
+to produce the message:- bin/kafka-console-producer.sh --bootstrap-server localhost:9092 --topic myTopic
+to consumer the message:- bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic myTopic --from-beginning
+to get consumer groups:- bin/kafka-consumer-groups.sh --bootstrap-server localhost:9092 --list
+to get all info about group:- bin/kafka-consumer-groups.sh --bootstrap-server localhost:9092 --describe --group console-consumer-12278
+to create consumer with dedicated group:- bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic myTopic --group myTopicGroup
+
+
+
+1. What is kafka? Kafka server(Kafka Broker)
+It is a distributed streaming platform. It can be used as an enterprise messaging system. It can be used for stream processing. It also provides connectors to import and export bulk data from databases and other systems. It is a distributed Message streeaming platform that uses publish and subscribe mechanism to stream the records. Features.
+a) Scalable:- Horizontal scaling is done by adding new brokers to the existing clusters.
+b) Fault Tolerance:- Kafka clusters can handles failures bacause of its distributed nature.
+c) Durable:- Kafka uses "Distributed commit log" which means messages persists on disk as fast as possible.
+d) Performance:- Kafka has high throughput for both publishing and suscribing messages.
+e) No Data loss:- It ensures no daata loss if we can configure it properly.
+f) Zero Down Time:- it ensured zero downtime when required number of brokers are present in the cluster.
+g) Reliability:- Kafka is reliable because it provides above features. 
+
+2. Producer
+An application that sends messages to Kafka. Message is small to medium sized piece of data. For kafka it is simple array of bytes. Producers are applications which write/publish data to the topics within a cluster using the Producing APIs. Producers can write data either on topic level(All the partitions of that topic) or specific partioons of the topic.
+
+3. Consumer
+An application that reads data from Kafka. Consumers are applications which read/consume data from the topics within a cluster using the Consuming APIs. Consumers can read data either on the topic level(All the partitions of that topic) or specific partitions of the topic. Consumers are always associted with exactly on Consumer Group. A Consumer roup is group of related consumers that perform a task.
+
+4. Cluster
+A group of computers sharing workload for common purpose.
+
+5. Topic
+A topic is a unique name for Kafka stream. A stream of messages belonging to a particular category is called a topic. It is a logical feed name to which records are published. Similar to a table in a database(records are considered messages here). Unique identifier of a topic is its Name. We can creates as many topics as we want.
+
+7. Partition
+Topics are split into partitions. All the messages within a partition are ordered and immautable. Each message within a partion has a unique id associted known as Offset.
+
+8. Replica and replication
+Replicas are backups of a prtition. Replicas are never read or write data. Thet are used to pevent data loss.(Fault-Tolerance)
+
+9. Broker 
+Brokers are simple software processes who mainatain and manage the published messages. Also Known as kafka servers. Brokers also manage the Consumer-offsets and responsible for the delivery of messages to the right consumers. Aset of brokers who are communicating with each other to perform the management and maintances task are collectively known as Kafka Cluster.We can add more brokers in a already running kafka cluster without any downtime.
+
+10. Zookeeper is used to moniter kafka Cluster and co-ordinate with each broker. Keeps all the metadata information related to kafka cluster in the form of a key-value pair.
+Metadata includes 
+a) Configuration information.
+b) Health status of each broker.
+It is used for the controller election within kafaka cluster. A set of Zookeepers nodes working together to manage other distributed systems is known as Zookeeper Cluster or Zookeeper Ensemble.
+
+11. Offset
+A sequence id given to messages as they arrive in a partition. The records in the partitions are each assigned a sequential id number called the offset that uniquely identifies each records within the partition.
+Three variations of offset
+a) Log-end offset :- Offset of the last message written to a log/Partiotn.
+b) Current offset :- Pointer to the last record that kafka has already sendt to a consumer in the most recent poll.
+c) Committed offset:- Marking an offset as consumed is caaled committing an offset(Commited offset).
+
+12. Global unique identifier of a message?
+Topic Name -> Partition Number -> Offset
+
+13. Consumer group
+A group of consumers acting as a single logical unit. Consumer group is a logical entity in kafka ecosystem which mainly provides Parallel processing/Scalable message consumption to consumer clients. Each consumer must be associated with some consumer group. Makes sure there is no duplication within consumers who are part of the same consumer group.
+
+14. Messaging System
+A messaging system is responsible for transferring data from one application to another so the applications can focus on data without getting bogged down on data transmission and sharing.
+Two types
+a) Point to Point Messaging System
+i) Messages are persisted in a Queue.
+ii) A particular message can be consumed by maximum of one receiver only.
+iii) There is no time dependency laid for the receiver to receive the message.
+iv) When the receiver receive the message, it will send an acknowlegement back to sender.
+
+b) Publish-Subscribe Messaging System
+i) Message are persisted in a Topic.
+ii) A particular message can be consumed by any number of consumers.
+iii) There is time dependency laid for the consumer to consume the message.
+iv) When the subscriber receives the message, it does not send an anknowledgement back to the publisher.
+
+14. Core APIs
+a)Producer APIs
+b)Consumer APIs
+c)Streams APIs
+d)Connecter APIs
+e) Admin APIs
+
+15. what happened internally when we create a topic?
+Partion State
+a) NonExistentPartition:- This state indicate that the partion was either never created or was created and then deleted.
+b) NewPartiton:- After creattion, the partion is in the NewPartion state. In this state, the partition should have replicas assigned to it, but no leader/isr yet.
+c) OnlinePartion:- Once leader is elected for a partiotn, it is in OnlinePartiotn state.
+d) OfflinePatiton:- If, after successful leader election, the leader for partion dies, then the partion moves to the OfflinePartiotn state.
+
+Replica State
+a) NewReplica: When replicas are created during topic creation or partiotn reassignment. In this state, a replica can only get become follower state chhange request.
+b) OnlineReplica:- Once a replica is started and part of the assigned replicas for its partition, it is in this state. In this state, it can get either become leader or become follower state change requests.
+c) OfflineReplica: If a replica dies, it moves to this state. This happens when the broker hosting the replica is down.
+d) NonExistentReplica:- If a replica is deleted, it is moved to this state.
+
+16. Kafka Controller Node
+In kafka cluster, one of the brokers serves as the controller, which is responsible for managing the states of partitions and replicas and for performing administrative tasks like reassigning partitions.
+
+17. Consumer group rebalancing
+The process of re-distributing partitions to the consumers within a consumer group is known as Consumer Group Rebalancing. Rebalancing of a Consumer group happens in below cases
+a) A consumer joining the consumer group.
+b) A consumer leaving the consumer group.
+c) If partitions are added to the topics which these consumers are interested in.
+4. If a partition goes in offline state.
+
+18. Group Coordinator
+Brokers in the Kafka cluster are assigned as a group coordinator for a subset of consumer groups. Group coordinator basically maintains/manages a list of consumer groups. Group coordinator initiates a rebalance process call. Group coordinator communicates the new sssignment of partitions of all the consumers. NOTE:- Until the rebalance process is not finished, the consumers witin the consumer group(whose rebalance is happening) will be blocked for any reads of messages.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -12,3 +12,12 @@ ArrayIndexOutOfBoundsException
 ArithmeticException
 IllegalArgumentException
 NumberFormatException
+ArrayStoreException
+
+1. Exception is an unusual exceptional event describing an error, which occurs only during the compile-time or runtime of a Java program.
+2. FileNotFoundException -> IOException
+3. If System.exit(0) code inside try catch then No. System.exit(0) doesn't return, and the finally block is not executed. but return; code inside try catch, the finally block executed.
+4. In Java, you may use the throw keyword when you explicitly want to throw an exception. The keyword throw is followed by an object of the exception class that you want to throw. Using throw keyword, an exception can be explicitly thrown from within the two places in a Java program -
+try-block or,
+catch-block.
+5. According to the Java Compiler - "we must either catch checked exceptions by providing appropriate try-catch block or we should declare them, using throws." Hence, when a method doesn't want to catch/handle one or more checked exceptions by providing an appropriate try-catch block within, it must use throws keyword in its method signature to declare that it does not handle but only throws such checked exceptions.

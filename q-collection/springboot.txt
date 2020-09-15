@@ -1,3 +1,5 @@
+to spring boot project:- mvn spring-boot:run
+
 1. What is spring boot(spring boot=spring framework - xml-configuration + integrated server)?
 1. Spring Boot provides a good platform for Java developers to develop a stand-alone and production-grade spring application that you can just run.
 2. we do not need manual configuration. Spring boot provides auto configuration like database configuration, spring mvc configuration etc.
