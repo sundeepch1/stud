@@ -30,9 +30,9 @@ AngularJS enriches form filling and validation. We can use $dirty and $invalid f
 Following can be used to track error.
 $error	$error object contains all the validation attributes applied to the specified element.
 $pristine	Returns true if the user has not interacted with control yet else returns false.
+$dirty		Returns true if user changed the value of model at least once
 $valid		Returns true if the model is valid
 $invalid	Returns true if the model is invalid
-$dirty		Returns true if user changed the value of model at least once
 $touched	Returns true if the user has tabbed out from the control.
 $untouched	Returns true if the user has not tabbed out from the control.
 

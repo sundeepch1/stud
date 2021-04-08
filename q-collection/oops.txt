@@ -1,3 +1,5 @@
+Interface and abstract class are 
+
 1. why use Interface?
 1) It is a third party specification.
 2) It is used to achieve abstration.
@@ -67,7 +69,23 @@ Initialize all the fields via a constructor performing deep copy.
 Perform cloning of objects in the getter methods to return a copy rather than returning the actual object reference.
 if we implement mutable class object then return clone copy of that class. clone with Constructors, clone with serialization
 
+17. Why method overriding is needed?
+Method overriding is mainly used in a situation when we want to create a more specialized version of a generic(general) method inherited from a superclass, within a subclass.
 
+18. Stack vs Heap
+Stack is a portion of the memory where local primitive variables or local object reference variables are stored. Such local variables live on the Stack until a block or method in which they are declared is being executed in a live thread. Heap is a portion of the memory where instances/objects and their instance variables are stored. Objects and instance variables continue to live on Heap until they are referenced by their reference variables. Once an object is no longer referenced by any reference variable, it is eventually removed from the Heap by Garbage Collector.
+
+19. 
+A Java Enumeration(Enums) defines a class type through which we can define a list of constants. By default, these constants are public, static and final. We cannot force JVM to run the garbage collector but we can only request JVM in two ways- By calling a static method of System class -System.gc(); By calling a method of Runtime class - gc();
+
+20. Java finalize() method
+A method named finalize() is executed before an object is de-allocated from the heap memory by the garbage collector. Each class inherits the finalize() method from the Object class, which is the superclass of all java classes. We can override the finalize() method to give it our own preferred definition.
+
+21. Use of a final method
+Marking a method with the final keyword in a class enforces its subclasses to use the final method in its original form, thereby disabling the subclasses from overriding this final method.
+
+22. Use of a final class
+When the creator of a class feels that his/her version of the class is the best version and it shouldn't be improved or modified by any other class by inheriting it, he/she declares this class with the final keyword. But, one should also remember that declaring a class as final prohibits inheritance, which is one of the main benefits of an object-oriented language.
 
 
 

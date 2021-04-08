@@ -9,4 +9,4 @@ Martin Fowler
 means when we request for resource then we get it in future(means asynchronous) so it is called bodyToMono.
 
 4. Eureka server vs eureka client, @loadBalanced(client side service discovery)
-
+5. Webflux body to mono, ParameterisedType
