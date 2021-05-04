@@ -1,3 +1,23 @@
+<spring-cloud.version>Greenwich.RELEASE</spring-cloud.version>
+<spring-cloud.version>2020.0.2</spring-cloud.version>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+		</dependency>
+		
+			<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring-cloud.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+
 1. Monolithic Architecture
 Monolithic Architecture is like a big container wherein all the software components of an application are assembled together and tightly packedged.
 2. What is micro services?(Distributed)
@@ -10,3 +30,43 @@ means when we request for resource then we get it in future(means asynchronous) 
 
 4. Eureka server vs eureka client, @loadBalanced(client side service discovery)
 5. Webflux body to mono, ParameterisedType
+6) Fault Tolerance & Resilient.
+
+
+https://api.themoviedb.org/3/movie/550?api_key=cea3b7a0b210dblea9f3707365849dd8
+https://api.themoviedb.org/3/movie/550?api_key=8fc0ea81788c649875e57e070d7c4df6
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

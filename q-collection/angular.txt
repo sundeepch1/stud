@@ -33,6 +33,10 @@ Angular: Better structure compare to AngularJS, easier to create and maintain la
 
 preloading, eager loading, lazy loading
 
+3) JIT vs AOT
+Just-in-Time (JIT), compiles your app in the browser at runtime.
+Ahead-of-Time (AOT), compiles your app at build time on the server.
+
 
 
 

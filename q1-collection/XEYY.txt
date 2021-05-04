@@ -1,0 +1,363 @@
+1) Programs for finding duplicates from list in java 8?
+=> List<Integer> list = new ArrayList<>();
+        list.add(10);
+        list.add(10);
+        list.add(10);
+        list.add(20);
+        list.add(20);
+        list.add(30);
+        list.add(40);
+        list.add(40);
+        list.add(50);
+        list.add(50);
+        list.add(50);
+
+        List<Integer> li =  list.stream().distinct().collect(Collectors.toList());
+
+        li.forEach(System.out::println);
+        
+2)Differences between map and flatmap
+=>a) The function passed to map() operation returns a single value for a single input vs The function you pass to flatmap() operation returns an arbitrary number of values as the output.
+b) One-to-one mapping occurs in map() vs One too many mapping occurs in flatMap().
+c) Only perform the mapping vs Perform mapping as well as flattening.
+d) Produce a stream of value vs Produce a stream of stream value.
+e) map() is used only for transformation vs flatMap() is used both for transformation and mapping.
+flatMap() is two step process i.e. map() + Flattening. It helps in converting Collection<Collection<T>> to Collection<T>.
+
+List<String> listOfStrings = Arrays.asList("1", "2", "3", "4", "5");
+
+        List<Integer> listOfIntegers = listOfStrings.stream()
+                .map(Integer::valueOf)
+                .collect(Collectors.toList());
+
+        System.out.println(listOfIntegers);     //[1, 2, 3, 4, 5]
+
+        List<String> list1 = Arrays.asList("1","2","3");
+        List<String> list2 = Arrays.asList("4","5","6");
+        List<String> list3 = Arrays.asList("7","8","9");
+
+        List<List<String>> listOfLists = Arrays.asList(list1, list2, list3);
+
+        List<Integer> listOfAllIntegers = listOfLists.stream()
+                .flatMap(x -> x.stream().map(Integer::valueOf))
+                .collect(Collectors.toList());
+
+        System.out.println(listOfAllIntegers);      //[1, 2, 3, 4, 5, 6, 7, 8, 9]
+        
+        List<Integer> li =  list.stream().sorted().collect(Collectors.toList());
+
+3)Internal working of a set?
+=> 
+
+4) What is transient?
+=> transient is a variables modifier used in serialization. At the time of serialization, if we don’t want to save value of a particular variable in a file, then we use transient keyword. When JVM comes across transient keyword, it ignores original value of the variable and save default value of that variable data type.
+
+transient keyword plays an important role to meet security constraints. There are various real-life examples where we don’t want to save private data in file. Another use of transient keyword is not to serialize the variable whose value can be calculated/derived using other serialized objects or system such as age of a person, current date, etc.
+Practically we serialized only those fields which represent a state of instance, after all serialization is all about to save state of an object to a file. It is good habit to use transient keyword with private confidential fields of a class during serialization.
+
+5) Hashmap vs concurrentHashmap?
+=>
+a) HashMap is the Class which is under Traditional Collection vs ConcurrentHashMap is a Class which is under Concurrent Collections.
+b) HashMap is non-Synchronized in nature i.e. HashMap is not Thread-safe whereas ConcurrentHashMap is Thread-safe in nature.
+c) HashMap performance is relatively high because it is non-synchronized in nature and any number of threads can perform simultaneously. But ConcurrentHashMap performance is low sometimes because sometimes Threads are required to wait on ConcurrentHashMap.
+d) While one thread is Iterating the HashMap object, if other thread try to add/modify the contents of Object then we will get Run-time exception saying ConcurrentModificationException.Whereas In ConcurrentHashMap we wont get any exception while performing any modification at the time of Iteration.
+
+6) Procedures vs views.
+=> It is all in the name. Views are essentially virtual tables comprised of pre-written SQL statements. You might have a view for displaying users who have joined in the last couple of days. Think of views as a means of getting data from your database without having to write or call queries constantly.
+
+7) WAP for prime number?
+=> public static void main(String... strings){
+        int low = 1;
+        int high = 50;
+
+        for (; low<high;low++){
+            if(low == 1)
+                continue;;
+            if(isPrime(low)){
+                System.out.print(low + "\t");
+            }
+        }
+    }
+
+    public static boolean isPrime(int num){
+        for(int i = 2; i<=num/2; i++){
+            if(num%i==0) {
+                return false;
+            }
+        }
+        return true;
+    }
+8) WAP for Leap Year.
+ if(((year % 4 == 0) && (year % 100!= 0)) || (year%400 == 0)){
+            System.out.println(year + " is a leap year.");
+        }else {
+            System.out.println(year + " is not a leap year.");
+        }
+
+9) BinarySearch program.
+private static boolean binarySearchRecursion(int[] data, int left, int right, int searchData) {
+        if(left<=right){
+            int mid = (left+right)/2;
+            if(data[mid]==searchData){
+                return true;
+            }else if(data[mid]>searchData){
+                return binarySearchRecursion(data, left, mid-1, searchData);
+            }else {
+                return binarySearchRecursion(data, mid+1, right, searchData);
+            }
+        }
+        return false;
+    }
+
+    public static boolean binarySearch(int[] arr, int left, int right, int value){
+        boolean search = false;
+       // int mid = (left+right)/2;
+        while (left<=right) {
+
+            int mid = (left+right)/2;
+            if (arr[mid] == value) {
+                search = true;
+                break;
+            } else if (arr[mid] > value) {
+                right = mid - 1;
+            } else {
+                left = mid + 1;
+            }
+        }
+        return search;
+    }
+    
+10) Delete an element from table, SQL
+=> DELETE FROM table_name WHERE condition;
+
+11) Defference between Comparable and Comparator.
+a) Comparable interface can be used to provide single way of sorting whereas Comparator interface is used to provide different ways of sorting.
+b) For using Comparable, Class needs to implement it whereas for using Comparator we don’t need to make any change in the class.
+c) Comparable interface is in java.lang package whereas Comparator interface is present in java.util package.
+d) We don’t need to make any code changes at client side for using Comparable, Arrays.sort() or Collection.sort() methods automatically uses the compareTo() method of the class. For Comparator, client needs to provide the Comparator class to use in compare() method.
+
+12) Difference between error and exception.
+=> Errors are the conditions which cannot get recovered by any handling techniques. It surely cause termination of the program abnormally. Errors belong to unchecked type and mostly occur at runtime. Some of the examples of errors are Out of memory error or a System crash error.
+
+a) Recovering from Error is not possible vs We can recover from exceptions by either using try-catch block or throwing exceptions back to caller.
+b) All errors in java are unchecked type vs Exceptions include both checked as well as unchecked type.
+c) Errors are mostly caused by the environment in which program is running vs Program itself is responsible for causing exceptions.
+d) Errors occur at runtime and not known to the compiler vs All exceptions occurs at runtime but checked exceptions are known to compiler while unchecked are not.
+e) They are defined in java.lang.Error package vs They are defined in java.lang.Exception package
+f) Examples : java.lang.StackOverflowError, java.lang.OutOfMemoryError vs Examples : Checked Exceptions : SQLException, IOException
+Unchecked Exceptions : ArrayIndexOutOfBoundException, NullPointerException, ArithmeticException.
+
+13) inner join query in HQL.
+=> @ManyToOne
+@JoinColumn(name="ID_TEAM")
+private Team team;
+Then, the following query will work flawlessly:
+select e from Employee e inner join e.team
+
+14) Reverse the string without using collection api.
+=>       String str = "Sundeep";
+
+        for(int i=str.length()-1; i>=0; i--){
+            System.out.print(str.charAt(i));
+        }
+        
+15) Find the largest number the string-sachin7457ghd98yh544.
+ String str = "string-sachin7457ghd98yh544";
+
+        int num = 0, res = 0;
+
+        // Start traversing the given string
+        for (int i = 0; i<str.length(); i++)
+        {
+            // If a numeric value comes, start converting
+            // it into an integer till there are consecutive
+            // numeric digits
+            if (Character.isDigit(str.charAt(i)))
+                num = num * 10 + (str.charAt(i)-'0');
+
+                // Update maximum value
+            else
+            {
+                res = Math.max(res, num);
+
+                // Reset the number
+                num = 0;
+            }
+        }
+        //res = Math.max(res, num);
+
+        System.out.println(res);
+        
+16) How to make our own immutable class.
+=> 
+a) Make your class final, so that no other classes can extend it.
+b) Make all your fields final, so that they’re initialized only once inside the constructor and never modified afterward.
+Don’t expose setter methods.
+c) When exposing methods which modify the state of the class, you must always return a new instance of the class.
+d) If the class holds a mutable object:
+Inside the constructor, make sure to use a clone copy of the passed argument and never set your mutable field to the real instance passed through constructor, this is to prevent the clients who pass the object from modifying it afterwards.
+Make sure to always return a clone copy of the field and never return the real object instance.
+
+public final class ImmutableStudent {
+
+    private final int id;
+    private final String name;
+
+    public ImmutableStudent(int id, String name) {
+        this.name = name;
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+}
+
+17) String object storage in SCP and HEAP memory.
+Whenever we call new String() in Java, it will create an object in the heap memory and String literals will go into String Constant Pool (SCP). 
+
+
+For objects, JVM used SCP which is for efficient memory management in Java. Unlike other Java objects, instead of managing String object on the heap area, they introduced the String constant pool. One of important characteristic of String constant pool is that it does not create the same String object if there is already String constant in the pool.
+
+Example
+public class SCPDemo {
+   public static void main (String args[]) {
+      String s1 = "Tutorials Point";
+      String s2 = "Tutorials Point";
+      System.out.println("s1 and s2 are string literals:");
+      System.out.println(s1 == s2);
+      String s3 = new String("Tutorials Point");
+      String s4 = new String("Tutorials Point");
+      System.out.println("s3 and s4 with new operator:");
+      System.out.println(s3 == s4);
+   }
+}
+
+Output
+s1 and s2 are string literals:
+true
+s3 and s4 with new operator:
+false
+
+18) Primary annotaion of spring boot.
+=> NoUniqueBeanDefinitionException
+
+19) Explain @EnableAutoConfiguration annotaion.
+=> @EnableAutoConfiguration annotation tells Spring Boot to “guess” how you want to configure Spring, based on the jar dependencies that you have added. Since spring-boot-starter-web dependency added to classpath leads to configure Tomcat and Spring MVC, the auto-configuration assumes that you are developing a web application and sets up Spring accordingly.
+
+20) Explain @OnCondition annotaion.
+=> 
+
+21) What are the headers used in HTTP Session?
+=> 
+
+22) what is lambda expression in java 8?
+=> The Lambda expression is used to provide the implementation of an interface which has functional interface. It saves a lot of code. In case of lambda expression, we don't need to define the method again for providing the implementation. Here, we just write the implementation code. A lambda expression is a short block of code which takes in parameters and returns a value. Lambda expressions are similar to methods, but they do not need a name and they can be implemented right in the body of a method. 
+
+A Java lambda expression is thus a function which can be created without belonging to any class. A Java lambda expression can be passed around as if it was an object and executed on demand. Java lambda expressions are commonly used to implement simple event listeners / callbacks, or in functional programming with the Java Streams API.
+
+23) What is Meta Space and PermGen?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

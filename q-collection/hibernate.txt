@@ -1,3 +1,5 @@
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root';
+
 1. SessionFactory vs Session
 SessionFactory is an instance which will create Session objects.
 SessionFactory keeps all DB  related information pulled from either hibernate.cfg.xml file or hibernate.properties file.

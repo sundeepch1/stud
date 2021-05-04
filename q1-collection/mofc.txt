@@ -1,0 +1,212 @@
+other Checked Exceptions –
+
+SQLException
+IOException
+ClassNotFoundException
+InvocationTargetException
+
+unchecked exception classes:
+
+NullPointerException
+ArrayIndexOutOfBoundsException
+ArithmeticException
+IllegalArgumentException
+NumberFormatException
+ArrayStoreException
+
+1) Explain the oops concepts.
+it is a paradigm. Which helps us to create project in secure, managed, scalable way and moreover it relates the real world entity in our programming world. It provieds four piller 
+Inheritance
+Polymorphism
+Encapsulation
+Abstraction
+
+2) What is difference between abstract class and interface.
+a) Abstract class can have abstract and non-abstract methods vs Interface can have only abstract methods. Since Java 8, it can have default and static methods also.
+b) Abstract class doesn't support multiple inheritance vs Interface supports multiple inheritance.
+c) Abstract class can have final, static and non-static variables vs Interface has only static and final variables.
+d) Abstract class can provide the implementation of interface vs Interface can not implement an interface, it can extend an interface.
+e) Abstract class declared using abstract keyword vs Interface is declared using interface keyword.
+f) Abstract class can inherit another class using extends keyword and implement an interface vs Interface can inherit only an inteface.
+g) Abstract class can have any type of members like private, public vs Interface can only have public members.
+
+3) What is polymerphism and Explain method overloading and method overriding.
+Polymorphism means having many forms. In Java, polymorphism allows us to access an object in multiple ways, such as -
+When an object is accessed by the reference variable of its own class.
+When an object is accessed by the reference variable of its superclass(in inheritance).
+An object accessed in such multiple ways is said to be accessed polymorphically or polymorphic in nature.
+
+The methods having the same name with different signature is called method overloading. The methods in super class with the same name and same signature defined in subclass is called the method overriding.
+
+4) What is exception and hierachy of exception.
+Exception is an unusual exceptional event describing an error, which occurs only during the compile-time or runtime of a Java program. When an exception occurs, it is said to be thrown by the Java interpreter, which is responsible for the execution of a Java program. If this thrown exception is not handled in the program, it stops the normal execution of the program and it ends abruptly. That's why we should handle an exception when it is thrown by the program. This process of handing the exception is called Exception Handling.
+a) Checked Exceptions
+This is a group of exceptions which are checked during the compile time of a program. Checked exceptions are checked by the Java Compiler. Checked Exceptions extends the Exception class.
+
+b) Unchecked Exceptions
+This is a group of exceptions which are only checked at the runtime of a program. Unchecked Exceptions are named so because they are left unchecked at the compile time of a program by Java Compiler. Unchecked exceptions are a type of RuntimeException class. Hence, unchecked exceptions are also called Runtime Exceptions. RuntimeException class extends Exceptions class.
+
+5) What is multithreading. How to use multithreading. Life cycle and state of a thread.
+A thread is a program in execution that is performing some specific task. Java allows us to perform multithreaded programming. A multithreaded program contains multiple threads running concurrently within a program, where each thread is performing some specific task. For example - a thread is performing text editing, a second thread is playing music and a third thread is printing a file in the background.
+A thread life cycle is divided into five different states, which a thread may go through in its lifetime. Each thread can be in one of the following five states. Let's understand each of these different states in the order in which they are mentioned below -:
+New State.
+Runnable State.
+Running State.
+Waiting or Blocked or Sleeping State.
+Dead State.
+a) New State
+A thread enters the new state when an object of Thread class is created but the start() method hasn't been called on it yet. In the new state, a thread is not considered alive as it's not a thread of execution. Once the start() method is called on the thread, it leaves the new state and enters the next state but once it leaves the new state, it's impossible for it to return back to the new state in its lifetime.
+
+b) Runnable State
+A thread enters the runnable state when the start() method has been called on it. It means, that a thread is eligible to run, but it's not yet running, as the thread scheduler hasn't selected it to run. At one point of time, there could be multiple thread in a runnable state, it's always the choice of thread scheduler to decide on which thread to move to the next state from the runnable state. A thread in the runnable state is considered to be alive. A thread can return to the runnable state after coming back from a sleeping, waiting/blocked or running state.
+
+c) Running State
+A thread enters the running state when the thread schedular has selected it to run(out of all the threads in a thread pool). In this state, a thread starts executing the run() method and it is alive and kicking. From the running state, a thread can enter into the waiting/blocked state, runnable or the final dead state. 
+
+d) Waiting or Blocked or Sleeping State
+
+A thread enters a not runnable in three situations -:
+When a thread has called the wait() method on itself and it is waiting for the other thread to notify it or wake it up.
+When the method sleep() is called on a thread, asking it to sleep for a duration.
+When a thread has called the join() method on another thread, which makes the first thread wait until the another thread has finished its execution.
+When a thread is waiting for an Input/Output resource to be free.
+
+When a thread finds itself in any of the above mentioned three states, such events pushes the thread into a blocking/waiting or sleeping mode and the thread is no longer eligible to run. In any of these states, the thread is still considered to be alive. When thread gets out of waiting, blocking or sleeping state, it re-enters into the runnable state.
+
+e) Dead State
+This is the last state in a thread's lifetime. A thread enters the dead state after it has successfully completed executing the run() method. At this situation, it is considered to be not alive and hence if you try to call start() method on a dead thread, it raises IllegalThreadStateException(which we will read about in an upcoming article).
+
+7) What is collection. Collection hirarchy. Difference between arraylist and vector.
+The Collection in Java is a framework that provides an architecture to store and manipulate the group of objects Interfaces and its implementations, i.e., classes Algorithm. 
+Collections hirarchy Iterable -> Collection ->(List, Set, Quoue)
+
+a) Synchronization and thread-safety
+First and foremost difference between Vector and ArrayList is that Vector is synchronized and ArrayList is not, what it means is that all the method which structurally modifies Vector e.g. add () or remove () are synchronized which makes it thread-safe and allows it to be used safely in a multi-threaded and concurrent environment. 
+b) Speed and Performance
+ArrayList is way faster than Vector. Since Vector is synchronized and thread-safe it pays the price of synchronization which makes it a little slow. On the other hand, ArrayList is not synchronized and fast which makes it an obvious choice in a single-threaded access environment. You can also use ArrayList in a multi-threaded environment if multiple threads are only reading values from ArrayList or you can create read-only ArrayList as well.
+c) Enumeration and Iterator
+Vector can return an enumeration of items it holds by calling elements () method which is not fail-fast as opposed to Iterator and ListIterator returned by ArrayList.
+d) Legacy
+Another point worth to remember is Vector is one of those classes which comes with JDK 1.0 and initially not part of Collection framework but in the later version, it's been re-factored to  implement List interface so that it could become part of collection framework.
+
+8) Differnce between list and set.
+a) Fundamental difference between List and Set in Java is allowing duplicate elements. List in Java allows duplicates while Set doesn't allow any duplicate. If you insert duplicate in Set it will replace the older value. Any implementation of Set in Java will only contains unique elements.
+
+b) Another significant difference between List and Set in Java is order. List is an Ordered Collection while Set is an unordered Collection. List maintains insertion order of elements, means any element which is inserted before will go on lower index than any element which is inserted after. Set in Java doesn't  maintain any order. Though Set provide another alternative called SortedSet which can store Set elements in specific Sorting order defined by Comparable and Comparator methods of Objects stored in Set.
+
+c) Set uses equals() method to check uniqueness of elements stored in Set, while SortedSet uses compareTo() method to implement natural sorting order of elements. In order for an element to behave properly in Set and SortedSet, equals and compareTo must be consistent to each other.
+
+d) Popular implementation of List interface in Java includes ArrayList, Vector and LinkedList. While popular implementation of Set interface includes HashSet, TreeSet and LinkedHashSet.
+
+9) Difference between TreeSet and TreeMap. How the hashmap work internally.
+a) Major difference between TreeSet and TreeMap is that TreeSet implements Set interface while TreeMap implements Map interface in Java.
+b) Second difference between TreeMap and TreeSet is the way they store objects. TreeSet stores only one object while TreeMap uses two objects called key and Value. Objects in TreeSet are sorted while keys in TreeMap remain in sorted Order.
+c) Third difference between TreeSet and TreeMap is that, former implements NavigableSet while later implements NavigableMap in Java.
+d) Fourth difference is that duplicate objects are not allowed in TreeSet but duplicates values are allowed in TreeMap.
+
+Hashing, Bucket, Hash Collision.
+
+11) MVC flow and which front controller is used in mvc.
+DispatcherServlet
+
+12) Difference between spring and spring boot?
+a) Spring Framework is a widely used Java EE framework for building applications vs stand-alone application with minimal or zero configurations. It is better to use if we want to develop a simple Spring-based application or RESTful services.
+b) To test the Spring project, we need to set up the sever explicitly vs Spring Boot offers embedded server such as Jetty and Tomcat, etc.
+c) Developers manually define dependencies for the Spring project in pom.xml vs Spring Boot comes with the concept of starter in pom.xml file that internally takes care of downloading the dependencies JARs based on Spring Boot Requirement.
+
+13) What is working of spring @Transactional. What is propagation and isolation level(read again).
+Spring start and commit/rollback transactions for you.
+
+14) What are function, procedures and triggers in sql.
+A function is a set of SQL statements that perform a specific task. Next time instead of rewriting the SQL, you can simply call that function. A function accepts inputs in the form of parameters and returns a value. SQL Server comes with a set of built-in functions that perform a variety of tasks. A procedure in SQL (often referred to as stored procedure), is a reusable unit that encapsulates the specific business logic of the application. A SQL procedure is a  group of SQL statements and logic, compiled and stored together to perform a specific task.
+
+a) A function is used to calculate result using given inputs vs A procedure is used to perform certain task in order. 
+b) A function can be called by a procedure vs A procedure cannot be called by a function.
+c) DML statments cannot be executed within a function vs DML statements can be executed within a procedure.
+d) A function can be called within a query vs A procedure cannot be called within a query.
+e) Whenever a function is called, it is first compiled before being called vs A procedure is compiled once and can be called multiple times without being compiled.
+f) A function returns a value and control to calling function or code vs A procedure returns the control but not any value to calling function or code.
+g) A function has no support for try-catch vs A procedure has support for try-catch blocks.
+f) A select statement can have a function call vs A select statemnt can't have a procedure call.
+g) A function can not have explicit transaction handling vs A procedure can use explicit transaction handling.
+
+A trigger is a special type of stored procedure that automatically runs when an event occurs in the database server. DML triggers run when a user tries to modify data through a data manipulation language (DML) event. ... SQL Server lets you create multiple triggers for any specific statement.
+
+15) How to run angular application.
+ng serve -o --poll=2000
+
+16) Flow of angular application.
+https://medium.com/siam-vit/how-an-angular-app-work-behind-the-scenes-angular-flow-dcc4d1df27bd
+
+17) what is difference between observable and promise?
+a)Emit multiple values over a period of time vs Emit a single value at a time.
+b) Are lazy: they’re not executed until we subscribe to them using the subscribe() method vs Are not lazy: execute immediately after creation.
+c) Have subscriptions that are cancellable using the unsubscribe() method, which stops the listener from receiving further values vs Are not cancellable.
+d) Provide the map for forEach, filter, reduce, retry, and retryWhen operators vs Don’t provide any operations.
+e) Deliver errors to the subscribers vs Push errors to the child promises.
+
+18) Why use the angular and main motive of angular.
+Angular helps build interactive and dynamic single page applications (SPAs), Component-based architecture. with its compelling features including templating, two-way binding, modularization, RESTful API handling, dependency injection, and AJAX handling. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

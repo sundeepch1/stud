@@ -35,7 +35,7 @@ When class A has a reference to the object of another class B, class A is said t
 7. Polymorphism means having many forms, having specific tasks implemented in diffrent ways as per requirements
 
 9. Why method overloading is used?
-Method overloading is mainly used in a situation when we want to create multiple specialized versions of a method in a class, with each version having the same name and doing some specific specialized task.
+Method overloading is mainly used in a situation when we want to create multiple specialized versions of a method in a class, with each version having the same name and doing some specific specialized task. The return type of an overriding method must be the same or a subtype of the return type declared in a method being overridden.
 
 10. method hiding
 when method with static keyword in super class, implement such method with same and same signature in sub class then it is called method hiding.

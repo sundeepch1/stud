@@ -1,6 +1,7 @@
 1. HashMap internal working, node(hash,key,value,next)->hashmap(bucket) but concurrenthashmap(segment)
 
 2. Difference between LinkedHashMap and HashMap in Java
+
 1. LinkedHashMap maintains insertion order of keys, order in which keys are inserted into LinkedHashMap. On the other hand HashMap doesn't maintain any order or keys or values.
 2. LinkedHashMap also requires more memory than HashMap because of this ordering feature. As I said before LinkedHashMap uses doubly LinkedList to keep order of elements.
 
@@ -10,11 +11,13 @@
 Contrary to fail-fast Iterator, fail-safe iterator doesn't throw any Exception if Collection is modified structurally while one thread is Iterating over it because they work on clone of Collection instead of original collection and that’s why they are called as fail-safe iterator. Iterator of CopyOnWriteArrayList is an example of fail-safe Iterator also iterator written by ConcurrentHashMap keySet is also fail-safe iterator and never throw ConcurrentModificationException in Java.
 
 4. What is the difference between Hashtable and HashMap in Java?
+
 1) HashMap is not thread-safe while Hashtable is a thread-safe collection.
 
 5. What is the difference between Hashtable and ConcurrentHashMap in Java?
 
 6. What is the difference between Vector and ArrayList in Java?
+
 1) Synchronization and thread-safety
 First and foremost difference between Vector and ArrayList is that Vector is synchronized and ArrayList is not, what it means is that all the method which structurally modifies Vector e.g. add () or remove () are synchronized which makes it thread-safe and allows it to be used safely in a multi-threaded and concurrent environment. 
 2) Speed and Performance
@@ -25,6 +28,7 @@ Vector can return an enumeration of items it holds by calling elements () method
 Another point worth to remember is Vector is one of those classes which comes with JDK 1.0 and initially not part of Collection framework but in the later version, it's been re-factored to  implement List interface so that it could become part of collection framework
 
 7. LinkedList vs ArrayList in Java
+
 1) Since Array is an index based data-structure searching or getting element from Array with index is pretty fast. Array provides O(1) performance for get(index) method but remove is costly in ArrayList as you need to rearrange all elements. On the Other hand LinkedList doesn't provide Random or index-based access and you need to iterate over linked list to retrieve any element which is of order O(n).
 
 2) Insertions and removal are easy and fast in LinkedList as compared to ArrayList because there is no risk of resizing array

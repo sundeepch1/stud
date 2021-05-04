@@ -1,17 +1,17 @@
-1. StringBuffer vs StringBuilder
+1) StringBuffer vs StringBuilder
 StringBuffer is synchronized i.e. thread safe. It means two threads can't call the methods of StringBuffer simultaneously.
 StringBuffer is less efficient than StringBuilder.
 vs
 StringBuilder is non-synchronized i.e. not thread safe. It means two threads can call the methods of StringBuilder simultaneously.
 StringBuilder is more efficient than StringBuffer.
 
-2. Comparable vs Comparator:-
-1. Comparable interface can be used to provide single way of sorting whereas Comparator interface is used to provide different ways of sorting.
-2. For using Comparable, Class needs to implement it whereas for using Comparator we don’t need to make any change in the class.
-3. Comparable interface is in java.lang package whereas Comparator interface is present in java.util package.
-4. We don’t need to make any code changes at client side for using Comparable, Arrays.sort() or Collection.sort() methods automatically uses the compareTo() method of the class. For Comparator, client needs to provide the Comparator class to use in compare() method.
+2) Comparable vs Comparator:-
+a) Comparable interface can be used to provide single way of sorting whereas Comparator interface is used to provide different ways of sorting.
+b) For using Comparable, Class needs to implement it whereas for using Comparator we don’t need to make any change in the class.
+c) Comparable interface is in java.lang package whereas Comparator interface is present in java.util package.
+d) We don’t need to make any code changes at client side for using Comparable, Arrays.sort() or Collection.sort() methods automatically uses the compareTo() method of the class. For Comparator, client needs to provide the Comparator class to use in compare() method.
 
-3. Object Class method
+3) Object Class method
 protected Object clone() throws CloneNotSupportedException
       Creates and returns a copy of this object.
 public boolean equals(Object obj)
@@ -57,23 +57,140 @@ public class Main
 	}
 }
 
-5.Lambda Expression in java.
+5)Lambda Expression in java.
 It is short hand syntax, which is first step in functional programming. A Java lambda expression is thus a function which can be created without belonging to any class. A Java lambda expression can be passed around as if it was an object and executed on demand. Java lambda expressions are commonly used to implement simple event listeners / callbacks, or in functional programming with the Java Streams API. In other words, an interface is still a functional interface even if it contains default and static methods, as long as the interface only contains a single. Lambda Expressions vs. Anonymous Interface Implementations.
 
-6. What is difference between Heap and Stack Memory in Java JVM
-1) 4) Visibility: One more difference between heap and stack memory comes from visibility and sharing perspective. Heap memory is shared by all threads hence it is also known as the main memory but stack memory is local to threads and local variable created there was not visible to others.
-2) Size: One of the significant differences between Stack and heap comes from their size. Heap space in Java is much bigger than the Stack memory. This is partly due to the fact that whenever a new thread is created in JVM, separate stack memory is allocated to them.
-3) Resizing: JVM allows you to resize both heap and stack in Java, though you need to use different JVM flags for that. You can use -Xms and -Xmx to specify the starting and maximum heap memory in Java. Similarly, you can use the -Xss to specify the stack size of individual threads in JVM.
-4) Usage: Another significant difference between heap and stack memory comes from their usage perspective. Heap memory is used to store objects in Java. No matter where you create object e.g. inside a method, a class, or a code block, they are always created in heap space and memory is allocated from the heap.One little exception of that is String literals which live in String pool, which was not part of the heap until Java 7. Earlier String pool was created on metaspace, which was separate memory are in JVM used to store class metadata, but from JDK 7 onwards String pool is merged into heap space.On the other hand, Stack memory is used to store local variables e.g. primitive int and boolean variables, method frames, and call stack.
-5) Order: Heap is a large memory area where objects can be created and stored in any order but Stack memory is structured as Stack data structure i.e. LIFO where method calls are stored as last in first out order. This is why you can use recursion in Java.
-6) Heap and Stack Memory Errors: You get different errors when heap or stack memory gets filled. For example, a faulty recursive algorithm can quickly make Stack memory filled up with recursive method calls in that case you will see java.lang.StackOverFlowError. But, when there is no more space left in heap to allocate a new object than you will see the OutOfMemoryError in java e.g. java.lang.OutOfMemoryError: Java Heap Space.
+6) What is difference between Heap and Stack Memory in Java JVM
+a) Visibility: One more difference between heap and stack memory comes from visibility and sharing perspective. Heap memory is shared by all threads hence it is also known as the main memory but stack memory is local to threads and local variable created there was not visible to others.
+b) Size: One of the significant differences between Stack and heap comes from their size. Heap space in Java is much bigger than the Stack memory. This is partly due to the fact that whenever a new thread is created in JVM, separate stack memory is allocated to them.
+c) Resizing: JVM allows you to resize both heap and stack in Java, though you need to use different JVM flags for that. You can use -Xms and -Xmx to specify the starting and maximum heap memory in Java. Similarly, you can use the -Xss to specify the stack size of individual threads in JVM.
+d) Usage: Another significant difference between heap and stack memory comes from their usage perspective. Heap memory is used to store objects in Java. No matter where you create object e.g. inside a method, a class, or a code block, they are always created in heap space and memory is allocated from the heap.One little exception of that is String literals which live in String pool, which was not part of the heap until Java 7. Earlier String pool was created on metaspace, which was separate memory are in JVM used to store class metadata, but from JDK 7 onwards String pool is merged into heap space.On the other hand, Stack memory is used to store local variables e.g. primitive int and boolean variables, method frames, and call stack.
+e) Order: Heap is a large memory area where objects can be created and stored in any order but Stack memory is structured as Stack data structure i.e. LIFO where method calls are stored as last in first out order. This is why you can use recursion in Java.
+f) Heap and Stack Memory Errors: You get different errors when heap or stack memory gets filled. For example, a faulty recursive algorithm can quickly make Stack memory filled up with recursive method calls in that case you will see java.lang.StackOverFlowError. But, when there is no more space left in heap to allocate a new object than you will see the OutOfMemoryError in java e.g. java.lang.OutOfMemoryError: Java Heap Space.
 
-7. Advantages of wrapper class
+7) Advantages of wrapper class
 1)Collections in the first place, for example,List<Integer>, you cannot use primitive int here. 
 2)Actually any generic class / interface that can work with different object types
 
+8) DataType
+=> byte(1 byte), short(2 byte), int(4 byte), long(8 byte), float(4 byte), double(8 byte), char(2 byte), boolean(1 bit)
+
+9) Class Access Modifiers
+=> 
+A Java class can be declared with an access modifier to specify how it will be accessed by the other classes in Java, and this access modifier is known as class access modifier. 
+a) Public Access Modifier:- When a class is declared with the public keyword, it means that this class is accessible and visible to all the classes in all the packages in Java. Out of all the access modifiers, public access modifier gives a class, the maximum visibility.
+
+b) Default Access Modifier:- When you declare a class with no access modifier, it is automatically given a default access modifier or default visibility, which means that this class is accessible and visible only to the classes in the same package. That's why it is also referred to as a - package level access.
+
+10) Class Member Access Modifiers
+=>
+The components of a class, such as its instance variables or methods are called the members of a class or class members. A class member is declared with an access modifier to specify how it is accessed by the other classes in Java. A Java class member can take any of the access modifiers, such as - public, protected, default and private.
+a) Public access modifier:- A class member, be it an instance variable or a method, can be declared with the public keyword. A class member declared with a public access modifier is accessible and visible to all the classes, as long as its class is visible to other classes.
+
+b) Private access modifier:- A class member - instance variable or method declared with the private keyword will be hidden and inaccessible to the other classes and it won't serve any purpose. Private member of a class is only accessible in the class in which it is declared or defined and not outside it.
+
+c) Default access modifier:- When you declare a class member with no access modifier, it is automatically given a default access modifier or default visibility, which means that this class member is accessible and visible only to the classes in the same package.
+
+d) Protected access modifier:- A Java class member such as - instance variable or method declared with the protected keyword will be accessible and visible to - All the classes in the same package. All the subclasses in the different packages.
+
+11) Abstract Class in Java
+=>
+An abstract class is declared with the abstract keyword. Unlike a regular java class, an abstract class may not only contain regular methods(non-abstract), which are defined with curly braces { } but may also contain abstract methods, which end with a semicolon; or a mix of regular and abstract methods.
+
+12) What are abstract methods?
+Abstract methods are not implemented in the abstract class and are declared with -:
+An abstract keyword.
+An access modifier.
+A return-type of this abstract method.
+A method name and parameters(if there are any) to be passed to it.
+
+13) Interface in Java
+=>
+An interface is a 100% abstract class which is declared with the interface keyword. Methods of an interface are implicitly abstract, hence when declaring an interface, you must not provide an implementation of any of its methods and its methods should end with a semicolon ;
+a) Interface methods are implicitly declared with the public access modifier and abstract keyword, which means that even if you don't explicitly type public and abstract with interface methods, they are still always public and abstract, by default.
+b) A class can implement an interface by providing the internal logic of all methods of an interface, conforming to each of their method signatures. To implement an interface, a class must use the implements keyword.
+c) Variables defined in an interface are implicitly public, final and static and that's why they are called constants, which means you can't change their value, doing so gives a compile error.
+d) You cannot instantiate or create an object of an interface, because it is a 100% abstract and skeletal. Hence, instantiating an interface gives a compile error.
+e) An Interface can extend multiple interfaces and it doesn't have to provide an implementation of methods of any of those interfaces.
+f) A class can implement multiple interfaces and it must provide an implementation of all their methods.
+g) An abstract class can implement an interface and it doesn't have to implement its methods.
+
+14) Java final keyword
+=>
+The main feature of the final keyword is that when anything marked with the final keyword is initialized to a value, this initialized value cannot be changed i.e. the value becomes final or a constant value.
+
+In Java, we can use the final keyword to mark a -:
+Local variable,
+Instance variable,
+Method,
+Class.
+a) Final local variable:- A local variable is declared within a method. Once a local variable declared with the final keyword is initialized with a value, you can't change that value. Although, if you still go ahead and assign a new value to a final local variable, it causes a compile error.
+b) Final instance variable:- Once a value is given to the final instance variable of a class, you cannot change its value. Although, if you still go ahead and give a new value to the instance variable of a class, it causes a compile error.  
+c) Final method:- Once a method is declared final in a class, it cannot be redefined or overridden by a subclass. But if we still try to override or give a new definition to a final method of a class, the compiler will throw a compile error. 
+Use of a final method
+Marking a method with the final keyword in a class enforces its subclasses to use the final method in its original form, thereby disabling the subclasses from overriding this final method.
+
+d) Final class:- Once a class is declared final, you cannot extend it. In other words, declaring a class final prevents it from being inherited by another class.
+Use of a final class
+When the creator of a class feels that his/her version of the class is the best version and it shouldn't be improved or modified by any other class by inheriting it, he/she declares this class with the final keyword. But, one should also remember that declaring a class as final prohibits inheritance, which is one of the main benefits of an object-oriented language.
+
+15) Java static keyword
+=> The main feature of using the static keyword is that, when anything is marked with the static keyword in a class, it belongs only to the class and not to the objects of the class. Now let us see, what in a class can be marked by using the static keyword.
+
+Features of a static variable and a static method
+a) A static variable and a static method belong to the class in which they are created, therefore, a static variable is called a class variable and a static method is called a class method.
+b) When a static variable is initialized with a value, its value remains the same value for all the objects of a class.
+c) A single copy of both, a static variable and a static method is shared by all the objects of a class.
+d) A static variable and a static method can be accessed by their class name with the dot operator.
+
+16) Java language provides us a keyword named this, which can be used to -
+Access the currently executing object of a class.
+Access the instance variables of the currently executing object.
+Calling the methods associated with the currently executing object.
+Calling the constructor of a class from within another constructor of a same class.
+To resolve the shadowing issue, when a local variable has a same name as an instance variable.
+
+Using this keyword to call a constructor from another constructor of a same class.
+
+By using this keyword, we can even call a constructor from within another constructor of a same class.
+
+class A
+{
+int a;
+
+//constructor1
+A()			
+{
+	this(10); 	//calling another constructor using this keyword.
+}
 
 
+//constructor2
+A(int x)		
+{
+	a=x;
+}
+
+public static void main(String... ar)
+{
+	A ob = new A();
+	System.out.println(ob.a);
+}
+
+Shadowing issue without using this keyword.
+Shadowing issue is caused when a local variable overshadows an instance variable, by having a same name as the instance variable in question.
+
+17) Is it Possible to add static or private methods in Java interface?
+=>nowadays you can add non-abstract static, default, and private methods in the Java interface. The static and default methods were supported as part of interface evolution in Java 8 and you can add private methods on an interface from Java 9 onwards.
+
+18) JAVA 8 features.
+=>
+lambda expression
+Stream API
+We can add static and default mathod in interface.
+
+19) 
+ 
 
 
 
