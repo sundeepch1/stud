@@ -1,0 +1,16 @@
+Project-?
+3D concept
+D- Domain(Theory)
+	what is this?
+	how uses?
+	how it functions?
+	
+D- Design
+	UML (Unified Modeling Language)
+	DFD (Data Flow Diagram)
+	E-R (Entity Relations)
+	
+	Screen Shots(BA Business Analyst)- AGILE
+	
+D- Development
+	Code, Dependencies, Environment setup, Modules integration, 		UnitTesting, functional checking.. etc

@@ -81,7 +81,7 @@ A Java class can be declared with an access modifier to specify how it will be a
 a) Public Access Modifier:- When a class is declared with the public keyword, it means that this class is accessible and visible to all the classes in all the packages in Java. Out of all the access modifiers, public access modifier gives a class, the maximum visibility.
 
 b) Default Access Modifier:- When you declare a class with no access modifier, it is automatically given a default access modifier or default visibility, which means that this class is accessible and visible only to the classes in the same package. That's why it is also referred to as a - package level access.
-
+om 
 10) Class Member Access Modifiers
 =>
 The components of a class, such as its instance variables or methods are called the members of a class or class members. A class member is declared with an access modifier to specify how it is accessed by the other classes in Java. A Java class member can take any of the access modifiers, such as - public, protected, default and private.

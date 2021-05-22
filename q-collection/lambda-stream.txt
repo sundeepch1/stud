@@ -1,0 +1,133 @@
+1. Method references.
+2. Collections improvments
+3. Why Lambdas
+1) Enables functional programming.
+2) Readable and concise code
+3) Easier to-use APIs and libraries
+4) Enables support for paralle processing.
+
+anonymous class and anonymous function, Type inference
+2. Greeting1 greeting = new HelloWorldGreeting(); greeting.perform(); :- It contains instance of type HelloWorldGreeting   
+Greeting1 lambda = () -> System.out.println("Foo"); lambda.perform(); :- It contains lambda expressiono of type Greeting1.
+
+3. Streams
+A sequence of elements supporting sequential and parallel aggregate operation.
+
+#) Lambda
+=> Lambda is anonymous function, The function is defined without any name.
+
+#) Consumer Functional Interface
+=> Consumer<T> is an in-bulit functional interface introduced in java 8. Consumer can be used in all contexts where an object needs to be consumed i.e. taken as input, and some operation is to be performed on the object without returning any result.
+
+void accept(T t), forEach method always contain consumer functional interface method.
+
+#) Predicate Functional Interface
+=> This functional interface used for conditional check. Where you think, we can use these true/false returning functions in day to day programming we should choose Predicate.
+
+boolean test(T t); filter method internally user the predicate
+
+#) Supplier Functional Interface
+=> Supplier can be used in all contexts where there is no input but an output is expected.
+
+T get(); use case when using filter method but not getting any then we return some useful informatio by using it. orElseGet(()->new String("Sundeep"))
+
+#) Stream In Java
+Stream API is used to process collections of objects. A stream is a sequence of objects that supports various methods which can be pipelined to produce the desired result. A stream is not a data structure instead it takes input from the collections, Arrays or I/O channels. Stream do not chage the original data structure, they only provide the result as per the pipelined methods.
+
+#) BiConsumer Functional Interface
+void accept(T t, U u);
+#)Sort by Stream API
+=> list.stream().sorted().forEach(System.out::println);
+        //Collections.sort(list);
+        //Collections.reverse(list);
+   list.stream().sorted(Comparator.reverseOrder()).forEach(System.out::println); 
+   list.stream().sorted().forEach(System.out::println);
+   employees.stream().sorted((a,b)->(int)(a.getSalary()-b.getSalary())).forEach(System.out::println);
+   employees.stream().sorted(Comparator.comparing(Employee::getName)).forEach(System.out::println);
+
+#) Map() & flatMap()
+=> Java 8 stream API provides map() and flatMap() method. Both these methods are intermediate methods and returns another stream part of the output.
+map() method used for transformation
+flatMap() method used for transformation & flattering
+flatMap()-> map()+flattering
+
+#) map() method -> Data Transformation
+=> map() takes Stream<T> as input and return Stream<R>
+Stream<R> map(Stream<T> input){}
+It is mapper function produces single value for each input value hence it is also called One-To-One mapping.  
+
+#) flatMap() method -> map()+flattering
+=> faltMap() takes Stream<Stream<T>> sa input and return Stream<T>
+Stream<R> flatMap(Stream<Stream<T>> input) {}
+
+<R> Stream<R> faltMap(Function<? super T, ? extends Stream<? extends R>> mapper)
+it is mapper function produces multiple value for each input value hence it is also called One-To-Many mapping.
+
+
+java standard, rest api standard
+
+#) Reduce method
+1. identity is initial value of type.
+2. accumulator is a function for combining two values.
+
+T reduce(T identity, BinaryOperator<T> accumulator);
+
+identity: 0 which is nothing initial value.
+Accumulator: (a,b) -> a+b function
+
+#) What is java Parallel Streams?
+=> Java Parallel Streams is feature of java8, It meant for utilizing multiple cores of the processor. Normally any java code has one stream of processing, where it is executed sequentially. Where as by using parallel streams, we can divide the code into multiple streams that are executed in parallel on separate cores and the final result is the combination of the individula outcomes. The order of execution, however, is not under our control .
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

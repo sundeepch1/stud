@@ -1,0 +1,54 @@
+RouterFunction -> @RequestMapping, HandlerFunction
+HandlerFunction -> ServerRequest -> HttpRequest, ServerResponse-> HttpResponse
+
+1) Thread per request model: Traditionally REST API
+a) New Programming Paradigm
+b) Asynchronous and non blocking
+c) Functional Style code
+d) Data flow as event driven stream
+e) Backpressure on data stream.
+
+2) Reactive Stream Specification
+a) Publisher or producer:- Publisher is a Data Source Who will always publish an event.
+	public interface Publisher<T>{
+		public void subscribe(Suscriber<? super T> s);
+	}
+b) Subscriber or consumer:- Subscriber will subscribe/consume the events from publisher.
+	public interface Subscriber<T>{
+		public void onSubscribe(Subscription s);
+		public void onNext(T t);
+		public void onError(Throwable t);
+		public void onComplete();
+	}
+c) Subscription:- Subscription represents the unique relationship between a Subscriber and a Publisher.
+ 	public interface Subscription{
+ 		public void request(long n);
+ 		public void cancel()
+ 	}
+d) Processor:- A processor represents a processing stage - which is both a Subscriber and a Publisher and MUST obey the contracts of both.
+	public interface Processor<T, R> extends Subscriber<T>, Publisher<R>{
+	}
+	
+3) Reactive Programming Library
+a) Reactor
+b) RxJava
+c) Jdk9 Flow Reactive Stream	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

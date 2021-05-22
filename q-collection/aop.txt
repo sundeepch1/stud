@@ -1,0 +1,99 @@
+JDK Dynamic Proxy
+https://docs.google.com/forms/d/1o9GVpl037nVVrdjqMMXDlq0xdsHVMtg8T9G9xrdRCuc/viewform?edit_requested=true
+https://www.youtube.com/watch?v=U9jwxRThY24&list=PLVlQHNRLflP_5qwWgRlT0cAQHX92PD3JN
+# Cross-Cutting Concerns :- Move additional Services of a Project into other classes[Services class/ Aspect classes] and bind when they are required.
+
+a) Aspect:- Aspect is a class, that provides additional services to project. Transaction Management, Logging, Security, Encode and Decode, Validation, Cache etc.
+b) Advice:- It is a method inside aspect class.[It is actual implemention of methods.] 
+c) Pointcut:-  it is expression, it will select business method which needs advices. It can never specify what advices. Pointcut can never specify which advice is going to be connected.
+expression: Access Accefier Return Type PACKAGE.CLASSNAME.METHODNAME(PARAMETER) 
+
+d) JoinPoint:-  It is a combination of Advices + Pointcut. In simple connecting business methods with required advices.
+e) Target:- Pure Business class object
+f) Weaving:- It is a process of mixing business class methods and their connected advices.
+g) Proxy:- Final Output (class/object) is called as Proxy that contains logic connected.
+--------------------------------------------------------------------------------------------------------------------------------------------
+Implemetation
+a) Spring AOP using XML Based Configuration[Legacy Style].
+b) Spring AOP using AspectJ[Annotation].
+
+# Types of Advices
+a) Before Advice:- Executing Advice before calling business method.
+	execution order : adviceMethod() -- 1st
+			   businessMethod() -- 2nd
+
+b) After Advice:- Executing Advice after calling business method.
+	execution order : businessMethod() -- 1st
+			   adviceMethod() -- 2nd
+
+
+c) Around Advice:- Advice code made into 2 sections/parts, first part executed before advice and then business method, laster second part of advice.
+	execution order : adviceMethod() -- 1 part 
+			   businessMethod() 
+			   adviceMethod() -- 2 Part
+
+d) After Returning Advice:- After executing business method, only on success execute advice.
+	execution order : businessMethod() -- 1st
+	(Is business method executed successfully, no exeception) then call	 adviceMethod() -- 2nd
+
+
+e) After Throwing Advice:- After executing business method, if business method is throwing any exception then execute advice.
+	execution order : businessMethod() -- 1st
+	(Is business method executed not successfully, no exeception) then call	 adviceMethod() -- 2nd
+	
+# What is difference between after, after returning, after throwing
+a) After advices is executed next to business method either success or fail.
+b) After returning advice is executed only on successful execution of business method.
+c)After Throwing advice is executed only on Failure(Exception) execution of business method.
+
+#Pointcut
+Pointcut Syntax:-
+Specifier ReturnType PackageName.ClassName.MethodName(ParameterTypes)
+
+Note: Allowed symbols in Pointcut expression: *(star), .(dot)
+----------------------------------Examples------------------------
+a)
+	public int in.nit.dao.EmployeeDao.saveEmployee(Employee):- saveEmployee() method having parameter 'Employee' with return type 'int' of type public defined in class EmployeeDao (in.nit.dao) is selected to connected with advice. 
+ b) public * in.nit.dao.EmployeeDao.*():- Zero Parameters only (no parameter), Any method name/Method inside EmployeeDao class, Any return type
+c) public * in.nit.dao.EmployeeDao.*(..):- Zero or more params (of any type) [Any Parameter is fine]
+d) public * in.nit.dao.*.*(..):- All classes which are inside in.nit.dao package and their  methods.
+
+tow dots(..):- two dots inside method param indicates any no. of parameters/type of parameters.
+
+	@Around("p1()")
+	public void aroundTest(ProceedingJoinPoint jp) {
+		System.out.println("Before b.method()");
+		try {
+			Object obj = jp.proceed();//cal business method
+			System.out.println(obj);
+			//on success
+		} catch (Throwable e) {
+			// on failure
+			e.printStackTrace();
+		}
+		//at any case
+		System.out.println("After b.method");
+	}
+	
+--------------------------------------------------------------
+From Advice, we need to call business method by using jointpoint details
+using:- ProceedingJoinPoint
+it has a method proceed that makes call to business method. Even it returns value given by business method(as Object type). 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

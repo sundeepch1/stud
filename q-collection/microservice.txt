@@ -36,7 +36,61 @@ means when we request for resource then we get it in future(means asynchronous) 
 https://api.themoviedb.org/3/movie/550?api_key=cea3b7a0b210dblea9f3707365849dd8
 https://api.themoviedb.org/3/movie/550?api_key=8fc0ea81788c649875e57e070d7c4df6
 
+#Monolithic Architecture
+a) Single jar/war file for whole applocation.
+Issues
+ Less flexible for large tean and base.
+ Overload IDE
+ Continuos development is difficult.
+ Scaling the app is difficult.
+ Scaling development is difficult.
+ Technology stack change is difficult.
+ 
+ #Microservice Architecture
+ A set of loosely coupled, collaborating srvices. Each service is
+ Highly maintainable and testable.
+ Loosely coupled with other services
+ Indepently deployable
+ Capable of being developed by a small team
+ Services can be developed independent of each other.
+ Communication among service via HTTP/REST/AMQP.
+ 
+ #Microservice Characteristics
+ a) Service granularity
+ b) Linguistice approach
+ c) Technologic agnostic
+ d) Some Points
+ Microservices is aspecialization of an implementation approach for service-oriented architecture(SOA) used to build flexible, independently deployable software systems.
+ Followed the introduction of DevOps.
+ Strategy-"Do one thing and do it well."
+ 
+ #Web Services.
+a) In a Web service, the Web technology such as HTTP- originally designed for human to man interaction communication is utilized for machine to machine communication.
+b) More specifically for transferring machine readable file formats such as XML and JSON.
+c) Web service commonly provides an object oriented web-based interface to a database service utilized by another Web server, or by a mobile app, that provides a user interface to the end user.
 
+#REST Service
+a) Representational State Transfer
+b) Software architetural style that defines a set of constraints to be used for creating Web services.
+c) Provide interoperability between computer systems on the internet.
+d) Thre is no official standard for RESTful Web APIs.
+e) REST was first introduced by Roy Fielding in 2000.
+f) REST full API is defined with following
+	- Base URI e.g:- 
+	- HTTP methods:- get/put/post/delete/patch
+	- A media type:-  
+
+What is Eureka?
+
+In simple word Eureka is a service Registry or we can say it is an embedded server provided by Netflix third party which integrate with spring framework.
+
+Main purpose to use Eureka : Micro service Registration and Discovery with Spring Cloud and Netflix's Eureka
+
+What is the use of Eureka?
+
+Normally in Micro Service Architecture Design we are developing separate Services and exposing each API as service Endpoint and whenever we required to access other services in simple we are accessing it  as a Rest client using third party API either Rest Template or Client Builder
+
+#) 
 
 
 

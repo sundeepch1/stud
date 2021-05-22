@@ -194,6 +194,8 @@ This annotation is applied at the class level. As explained earlier, for each co
 
 28. The @Configuration annotation indicates that the class is a source of bean definitions. Also, we can add it to multiple configuration classes.
 
+29. How to override dependency in spring boot application.
+
 
 
 

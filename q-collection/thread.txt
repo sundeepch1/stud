@@ -1,0 +1,172 @@
+(Job == Task == Process== Programs) 
+Multi Tasking
+=>
+a) performing multiple task at single time.
+b) increase the performance of CPU.
+
+2 Types
+a) Process based multitasking(Multi Processing)
+b) Thread based multitasking (Multi Threading)
+
+Multi Process
+=>
+When one system is coonected to multiple processors in orders to complete the tasks.(CPU == Processors). It is best suitable at system level or OS level.
+
+Multi Threading (VLC(task)= videos(sub task), Musics, Timer, Progress bar.)
+=> Executing multiple threads(sub-process, small task) at single time.(eg. Software, Games, Animation)
+
+Difference Process and Thread
+a) A program which is in executing state. vs it is subpart of process(small task)
+b) Process is heavy weight vs thread is light weight.
+c) Process takes more time for context switching vs Thread takes less time for context switching
+d) Process takes more time for inter process communication vs Thread takes less time for inter thread communication.
+e) Process has different address space vs threads share same address space.
+f) Processes are not dependent on eachother vs Threads are dependent ont eachother.
+g) There does not required sychronisation vs Threads may require sychronisation.
+h) Process consumes more resounces vs Threads consumes less resources.
+i) It is taking more time to create the process vs it is taking less time to create the threads.
+j) Process requires more time for termination vs Thread requires less time for termination.
+
+# There two ways to create thread
+a) Thread(Class)
+b) Runnable(interface)
+
+a) Thread(Class)
+step-1:- Extends the "Thread" class.
+step-2:- Override the run() mothod
+step-3:- Create an object of the class.
+step-4:- Start the thread.
+start method separate call stack sothat Thread call the run method. If we try to start again thread it throw the exeption IllegalThreadStateException.
+
+
+b)  Runnable(interface)
+step-1:- implement Runnable interface.
+step-2:- override the run method.
+step-3:- Create the object test class, Test t = new Test(); 
+step-4:- Create the object of thread class and pass it to constructor. Thread th = new Thread(t);
+step-5:- th.start();
+
+#Performing single task from single thread.public class SingleTaskSingleThread extends Thread{
+
+    public void run(){
+        System.out.println("Task 1");
+    }
+
+    public static void main(String... strings){
+        SingleTaskSingleThread singleTaskSingleThread = new SingleTaskSingleThread();
+        singleTaskSingleThread.start();
+    }
+}
+
+#Performing single task from multiple thread
+public class SingleTaskMultipleThread extends Thread{
+
+    public void run(){
+        System.out.println("Task 1");
+    }
+
+    public static void main(String... strings){
+        SingleTaskMultipleThread thread1 = new SingleTaskMultipleThread();
+        thread1.start();
+
+        SingleTaskMultipleThread thread2 = new SingleTaskMultipleThread();
+        thread2.start();
+    }
+}
+#Performing multiple task from single thread
+Not Possible
+#Performing multiple task from multiple thread
+class MyThread1 extends Thread{
+    @Override
+    public void run(){
+        System.out.println("Task 1");
+    }
+}
+
+class MyThread2 extends Thread{
+    @Override
+    public void run(){
+        System.out.println("Task 2");
+    }
+}
+public class MultipleTaskMultipleThread {
+
+    public static void main(String... strings){
+        MyThread1 myThread1 = new MyThread1();
+        myThread1.start();
+
+        MyThread2 myThread2 = new MyThread2();
+        myThread2.start();
+    }
+}
+
+#public class Thread implements Runnable{
+	Thread()
+	Thread(Runnable target)
+	Thread(String name)
+	Thread(Runnable target, String name) 
+	Thread(ThreadGroup tg, Runnable target)
+	Thread(ThreadGroup tg, String name)
+	Thread(ThreadGroup tg, Runnable target, String name)
+	Thread(ThreadGroup tg, Runnable target, String name, long stacksize)
+	basics methods
+	public void run(), 
+	public synchronized void start(),
+	public static native Thread currentThread(),
+	public final native boolean isAlive(),
+	
+	name methods
+	public final String getName(),
+	public final synchronized void setName(String name)
+	
+	Daemon related methods
+	public final boolean isDaemon(),
+	public final void setDaemon(boolean true)
+	
+	priority related methods,
+	public final int getPriority(),
+	public final void setPriority(int pv)
+	
+	preventing thread executing method
+	public static native void sleep(time) throws InterruptedException,
+	public static native void yield(),
+	public final void join() throws InterruptedException,
+	
+	Depricated methods
+	public final void suspend(),
+	public final void resume(),
+	public final void stop(),
+	public void destroy()
+
+	interruption related methods
+	public void interrupt(),
+	public boolean isInterrupted,
+	public static boolean interrupted()
+}
+
+inter-thread communication methods
+class object{
+	public final void wait() throws InterruptedException,
+	public final native void notify(),
+	public final native void notifyAll()
+}
+
+# Daemon Thread:- which run in the background of another thread. It provides service to the thread. Eg. Grabage Collector, Finalizer, Attach Listeners, Aignal dispachers etc, spelling checking. We have to create daemon thread before starting the thread, if we create daemon thread after starting it, it will throw run time exception i.e. IlligalThreadException. We can notcreate main thread as daemon thread. It inherts the nature/properties from its parent thread. If all threads are in dead state but daemon thread still alive then jvm automatically kill the daemon thread. Most of time priority of daemons are in low priority but we can change as per our need.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
