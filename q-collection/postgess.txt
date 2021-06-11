@@ -1,0 +1,24 @@
+# what is PostgresSQL?
+=> It is a powerful, open-source, object-relational database system(ORDBMS). It is used to store data securly. It is developed by POstgresSQL Global development Group(a team of volunteers). It is not controlled by any corporation or other private entity.
+
+# History of postgreSQL.
+=> It was started in 1986 by professor Stonebreaker as a follow up project. postgresql is now the most advanced open-source database available anywhere.
+
+# Features of postgress.
+=> It runs on all majors os like Linux, Unix and windows. It supports text, image, sound, video and include interfaces for many language like c, c++, java etc. It supports a alot of features of sql like - complex sql queries, foreign ey, triggers, viewws, transations and concurrancy etc. In postgresql table can be set to inherit their characteristics from a parent table. You can install several extesions to add additional functionality to postgresql.
+
+#) sudo -i -u postgres
+1) psql
+#) sudo -u postgres psql
+#) \l :- To list all databases
+#) Create database database_name
+=> To create new database.
+#) To choose the database use \c (connect) database_name
+#) To drop database => drop database database_name
+#) to create table => create table students(id integer not null primary key,fname text not null, lname text not null, age integer not null);
+#) to list all tables => \d (describe)
+#) to drop table => drop table table_name
+#) to create schema => create schema myschema(schema_name)
+#) to list schema => \dn
+#) to drop schema => drop schema myschema(schema_name)
+#) 

@@ -59,8 +59,12 @@ Criteria Builder
 1. You obtain a javax.persistence.criteria.CriteriaBuilder instance by calling the getCriteriaBuilder() method of either javax.persistence.EntityManagerFactory or javax.persistence.EntityManager.
 
 What is use of @Nullable?
-=>
 
+
+1) relaxed binding spring
+2) dirty checking
+3) light weight mapping
+4) hibernate tunning
 
 
 

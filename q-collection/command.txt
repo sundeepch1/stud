@@ -1,0 +1,5 @@
+1) sudo -i -u postgres
+1) psql
+2) sudo -u postgres psql
+3) \l :- To list all databases
+4) 

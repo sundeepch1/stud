@@ -87,6 +87,8 @@ As I understood from docs, Interceptor is run between requests. On the other han
 16. @autowired is worked consumer and @Bean worked as producer 
 unmarshaling, create a new client
 
+{"id":101,"firstName":"ABC","lastName":"XYZ"}
+
 
 
 
