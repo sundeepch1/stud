@@ -1,3 +1,5 @@
+set RABBIT_URI=amqp://localhost
+
 <spring-cloud.version>Greenwich.RELEASE</spring-cloud.version>
 <spring-cloud.version>2020.0.2</spring-cloud.version>
 		<dependency>
@@ -90,7 +92,29 @@ What is the use of Eureka?
 
 Normally in Micro Service Architecture Design we are developing separate Services and exposing each API as service Endpoint and whenever we required to access other services in simple we are accessing it  as a Rest client using third party API either Rest Template or Client Builder
 
-#) 
+#) Slueth
+=> It used to trace the request going through multiple microservices. It generates a unique id for each request, such logs push into rabbitMQ, Zipkin server consumes such logs to trace the all request from rabbitMQ
+
+#) Ribbon
+=> Here ribbon is used for load balancing.Feign client is used to make call to another application. Ribbon is used to get the instance of another application. Multiple instances can be configured by using the ribbon.
+
+#) Zuul or api gateway(server)
+=> Both are a kind of filter. It is a kind of intercepting filters.  
+
+#) First download erlang , rabbitMQ and Zipkin server respectively.
+
+#) config server :- it is used to reading properties file contents from the cloud directory. We can access by http://localhost:7088/test/qa. (file name = test-qa.properties). it is not necessary to restart config server each time. when we changes something inside the properties file instantly reflects into config server but not in config client. We can get the modified value without restaring the client service by including "management.endpoints.web.exposure.include=refresh" endpoint in bootstrap.properties file. And hit the url http://localhost:7089/actuator/refresh as POST Method. The modified value automatically reflects in the client service(only for one instace, here instance means client service running on the port like 7089). One object(instance), one time actuator refreshed. If we have 100 insatces of the same application. We require 100 instances of invocation using actuator. To refresh all the instances of same application at one time we have to use spring cloud bus. It internally use the rabbitMQ. 
+
+management.endpoints.web.exposure.include=refresh (we can use these two inside boostrap.proerties file) 
+http://localhost:8082/actuator/bus-refresh
+
+management.endpoints.web.exposure.include=*(we can use this single statement in boostrap.properties file)
+
+we can refresh by using http://localhost:7099/actuator/bus-refresh as post method. We can refresh any one instace automatically reflect in all instances.
+
+#) Hystrix
+=> It is mainly used for handling fail over.
+
 
 
 
