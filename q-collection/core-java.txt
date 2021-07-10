@@ -1,3 +1,6 @@
+Kali Linux solution video(https://www.youtube.com/watch?v=uU5adNJG7qg)
+
+
 1) StringBuffer vs StringBuilder
 StringBuffer is synchronized i.e. thread safe. It means two threads can't call the methods of StringBuffer simultaneously.
 StringBuffer is less efficient than StringBuilder.
@@ -183,13 +186,92 @@ Shadowing issue is caused when a local variable overshadows an instance variable
 17) Is it Possible to add static or private methods in Java interface?
 =>nowadays you can add non-abstract static, default, and private methods in the Java interface. The static and default methods were supported as part of interface evolution in Java 8 and you can add private methods on an interface from Java 9 onwards.
 
-18) JAVA 8 features.
+18) JAVA 8 FEATURES
 =>
 lambda expression
 Stream API
 We can add static and default mathod in interface.
 
-19) 
+------------------------------------------------------------------------------------------------------------------------------
+JAVA 9 FEATURES
+------------------------------------------------------------------------------------------------------------------------------
+1) Java 9 REPL (JShell)
+G:\>jshell
+|  Welcome to JShell -- Version 9-ea
+|  For an introduction type: /help intro
+
+
+jshell> int a = 10
+a ==> 10
+
+jshell> System.out.println("a value = " + a )
+a value = 10
+
+2) Factory Methods for Immutable List, Set, Map and Map.Entry
+They are Immutable.
+We cannot add, modify and delete their elements.
+If we try to perform Add/Delete/Update operations on them, we will get UnsupportedOperationException as shown below:
+
+ List<String> emptyList = new ArrayList<>();
+ List<String> immutableList = Collections.unmodifiableList(emptyList);
+ 
+ of vs ofEntries
+ => of not supports varargs but ofEntries supports varargs.
+ 
+ 3) Private methods in Interfaces
+ => From Java SE 9 onwards, we can write private and private static methods too in an interface using a ‘private’ keyword. These private methods are like other class private methods only, there is no difference between them.
+We should use private modifier to define these methods. No private and abstract modifiers together, it will give compiler error. The “private” method means fully implemented method because sub-classes cannot inherit and override this method. The “abstract” method means no-implementation method. Here sub-classes should inherit and override this method. Private methods must contain body. No lesser accessibility than private modifier.
+Why do we need private methods in Interface?
+Java 9 private methods in interfaces have following benefits.
+No need to write duplicate code, hence more code reusability.
+We got the choice to expose only our intended methods implementations to clients.
+
+4) Java 9 Module System
+Before Java SE 9 versions, we are using Monolithic Jars to develop Java-Based applications. This architecture has a lot of limitations and drawbacks. To avoid all these shortcomings, Java SE 9 is coming with the Module System. JDK 9 is coming with 92 modules (may change in final release).
+
+5) Process API Improvements
+Java SE 9 is coming with some improvements in Process API. They have added couple new classes and methods to ease the controlling and managing of OS processes.
+java.lang.ProcessHandle
+java.lang.ProcessHandle.Info
+long pid = ProcessHandle.current().pid();
+
+ProcessHandle currentProcess = ProcessHandle.current();
+System.out.println("PID: " + currentProcess.pid());
+
+Optional<ProcessHandle> processHandle = ProcessHandle.of(pid);
+boolean isAlive = processHandle.isPresent() && processHandle.get().isAlive();
+System.out.println(isAlive); 
+
+6) Try With Resources Improvement
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  
 
 

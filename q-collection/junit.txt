@@ -1,23 +1,47 @@
-jupiter, vintage
-1. @Test, which tells the JUnit that the public void method in which it is used can run as a test case.
-assertEquals, assertArrayEquals, asertIterableEquals
+JUNIT 4
+--------------------------------------------------------------------------------------------------------------------------------------------
+#) @RunWith(SpringRunner.class) vs @RunWith(MockitoJUnitRunner.class)
+The SpringRunner provides support for loading a Spring ApplicationContext and having beans @Autowired into your test instance. It actually does a whole lot more than that (covered in the Spring Reference Manual), but that's the basic idea.
+Whereas, the MockitoJUnitRunner provides support for creating mocks and spies with Mockito.
+However, with JUnit 4, you can only use one Runner at a time.
+Thus, if you want to use support from Spring and Mockito simultaneously, you can only pick one of those runners.
+But you're in luck since both Spring and Mockito provide rules in addition to runners.
+Though, typically, if you're using Spring Boot and need to mock a bean from the Spring ApplicationContext you would then use Spring Boot's @MockBean support instead of simply @Mock.
 
-2. @RunWith(SpringRunner.class):-
-3. @SpringBootTest:-
-4. webEnvironment:-
-5. @LocalServerPort:-
-6. @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
-7. @DataJpaTest
-8. @AutoConfigureTestDatabase
+verify(employeeRepository, times(1)).delete(employee); => verify method is used for the method is called or not, called times like (times(1))
 
-create table employee(
-	id int primary key auto_increment,
-        first_name varchar(30),
-        last_name varchar(30),
-        email varchar(30)	
-);
+#) What is Mocking?
+Mocking is a way to test the functionality of a class in isolation. Mocking does not require a database connection or properties file read or file server read to test a functionality. Mock objects do the mocking of the real service. A mock object returns a dummy data corresponding to some dummy input passed to it.
+
+#) Mockito
+Mockito facilitates creating mock objects seamlessly. It uses Java Reflection in order to create mock objects for a given interface. Mock objects are nothing but proxy for actual implementations.
+
+#) verify()
+The verify() method is used to check whether some specified methods are called or not. In simple terms, it validates the certain behavior that happened once in a test. It is used at the bottom of the testing code to assure that the defined methods are called.
+
+Mockito framework keeps track of all the method calls with their parameters for mocking objects. After mocking, we can verify that the defined conditions are met or not by using the verify() method. This type of testing is sometimes known as behavioral testing. It checks that a method is called with the right parameters instead of checking the result of a method call.
+
+The verify() method is also used to test the number of invocations. So we can test the exact number of invocations by using the times method, at least once method, and at most method for a mocked method.
+
+#) @RunWith(SpringRunner.class) vs @SpringBootTest 
+@RunWith(SpringRunner.class) : You need this annotation to just enable spring boot features like @Autowire, @MockBean etc.. during junit testing is used to provide a bridge between Spring Boot test features and JUnit. Whenever we are using any Spring Boot testing features in our JUnit tests, this annotation will be required.
+
+@SpringBootTest : This annotation is used to load complete application context for end to end integration testing. The @SpringBootTest annotation can be used when we need to bootstrap the entire container. The annotation works by creating the ApplicationContext that will be utilized in our tests. @SpringBootTest annotation tells Spring Boot to go and look for a main configuration class (one with @SpringBootApplication for instance), and use that to start a Spring application context. SpringBootTest loads complete application and injects all the beans which can be slow. @SpringBootTest loads full application context, exactly like how you start a Spring container when you run your Spring Boot application.
+
+#) @WebMvcTest
+=> for testing the controller layer and you need to provide remaining dependencies required using Mock Objects. @WebMvcTest loads only the web layer, which includes security, filter, interceptors, etc for handling request/response. Typically you would write tests for methods under @Controller or @RestController.
+
+#) @DataJpaTest 
+=> loads only configuration for JPA. It uses an embedded in-memory h2 if not specified otherwise. Service layer tests should ideally not have any annotations (except for ones that aid in mocking) because this is where your business logic (independent of any configurations) sits.
 
 
- insert into employee values(null,"Lokesh", "Gupta", "howtodoinjava@gmail.com");
- insert into employee values(null,"Alex", "Kolenchiskey", "abc@gmail.com");
- insert into employee values(null,"David", "Kameron", "titanic@gmail.com");
+
+
+
+
+
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+JUNIT 5
